@@ -28,5 +28,4 @@ Route::resource('producto', 'ProductoController');
 Route::get("index", 'ProductoController@index');
 Route::post("/producto", 'ProductoController@store');*/
 
-Route::resource('producto', 'ProductoController');
 
