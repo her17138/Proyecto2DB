@@ -108,16 +108,16 @@
             <form method="post" action="{{ route('producto.store') }}">
                 <div class="form-group">
                     @csrf
-                    <label for="name">Share Name:</label>
-                    <input type="text" class="form-control" name="share_name"/>
+                    <label for="name">Id del producto:</label>
+                    <input type="text" class="form-control" name="id"/>
                 </div>
                 <div class="form-group">
-                    <label for="price">Share Price :</label>
-                    <input type="text" class="form-control" name="share_price"/>
+                    <label for="price"> Nombre del producto :</label>
+                    <input type="text" class="form-control" name="nombreid"/>
                 </div>
                 <div class="form-group">
-                    <label for="quantity">Share Quantity:</label>
-                    <input type="text" class="form-control" name="share_qty"/>
+                    <label for="quantity">Id de la tienda:</label>
+                    <input type="text" class="form-control" name="tiendaid"/>
                 </div>
                 <button type="submit" class="btn btn-primary">Add</button>
             </form>

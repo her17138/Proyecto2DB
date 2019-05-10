@@ -35,9 +35,13 @@ class ProductoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $producto = new Producto;
+        $producto -> productoid = $request -> input("id");
+        $producto -> Nombre = $request -> input("nombre");
+        $producto -> tiendaid = $request -> input("tiendaid");
+        $producto->save();
+        echo json_encode($producto); //print del objeto para ver que tiene
     }
-
     /**
      * Display the specified resource.
      *
