@@ -11,18 +11,17 @@
 |
 */
 
-Route::get('/home', function () {
+Route::get('/', function () {
     return view('home');
 }) -> name ('home');
 
-Route::get('/', function(){
-    return view('crearProducto');
-}) -> name ('crearProducto');
 
-Route::get('/ap', function(){
+
+Route::get('/atributos', function(){
     return view('atributosProducto');
 }) -> name ('atributosProducto');;
 
-
+Route::get("index", 'ProductoController@index');
+Route::post("store", 'ProductoController@store');
 
 

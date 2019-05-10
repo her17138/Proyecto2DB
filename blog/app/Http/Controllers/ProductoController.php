@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Producto;
 
 class ProductoController extends Controller
 {
+
+
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +16,9 @@ class ProductoController extends Controller
      */
     public function index()
     {
-        //
+        
+        return view('crearProducto');
+        
     }
 
     /**
@@ -34,7 +39,11 @@ class ProductoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $producto = new Producto;
+        $producto -> productoid = Input::get("id");
+        $producto -> nombre = Input::get("producto");
+        $producto->save();
+        echo "Success";
     }
 
     /**
