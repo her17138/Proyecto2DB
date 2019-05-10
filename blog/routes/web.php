@@ -19,13 +19,13 @@ Route::get('/', function () {
 
 Route::get('/atributos', function(){
     return view('atributosProducto');
-}) -> name ('atributosProducto');;
+}) -> name ('atributosProducto');
 
-Route::get('/prodForm', function(){
-    return view('ingresarAtrbCategs');
-}) -> name ('ingresarAtrbCategs');;
 
+Route::resource('producto', 'ProductoController');
+
+/*
 Route::get("index", 'ProductoController@index');
-Route::post("/producto", 'ProductoController@store');
+Route::post("/producto", 'ProductoController@store');*/
 
 

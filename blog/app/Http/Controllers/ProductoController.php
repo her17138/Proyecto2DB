@@ -1,9 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Producto;
 
 use Illuminate\Http\Request;
-use App\Producto;
 
 class ProductoController extends Controller
 {
@@ -44,9 +44,8 @@ class ProductoController extends Controller
         $producto -> Nombre = $request -> input("nombre");
         $producto -> tiendaid = $request -> input("tiendaid");
         $producto->save();
-        echo json_encode($producto); //print del objeto para ver que tiene
+        return redirect('/atributos'); // redireccion de vista al terminar de guardarlo
     }
-
     /**
      * Display the specified resource.
      *
