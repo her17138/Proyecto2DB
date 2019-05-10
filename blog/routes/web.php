@@ -21,7 +21,8 @@ Route::get('/atributos', function(){
     return view('atributosProducto');
 }) -> name ('atributosProducto');;
 
-Route::get("index", 'ProductoController@index');
-Route::post("/producto", 'ProductoController@store');
+Route::get('/facturacion', function(){
+    return view('facturacion');
+}) -> name('facturacion');
 
 

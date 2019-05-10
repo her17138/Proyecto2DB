@@ -83,28 +83,54 @@
        
             <div class="content">
                 <span class="contact100-form-title">
-                        Creación de tienda
+                        Facturacion
                     </span>
             <div class="wrap-contact100">
 
 			<form method="post" action= "/store" class="contact100-form validate-form" >
                 {{csrf_field()}}
-				
-				<div class="wrap-input100 validate-input" data-validate="Porfavor ingrese el nombre de la tienda">
-					<input class="input100" type="text" name="id" placeholder="Nombre del producto">
-					<span class="focus-input100"></span>
-				</div>
+			
+                <div class="form-group">
+                    <label for="No">No. factura</label>
+                    <input type="text" class="form-control" id="No" disabled>
+                </div>
 
-
-				<div class="wrap-input100 validate-input" data-validate = "Ingrese sus productos separados por comas">
-					<textarea class="input100" name="nombre" placeholder="Atributos del producto (separadas por coma)"></textarea>
-					<span class="focus-input100"></span>
-				</div>
-
-                <div class="wrap-input100 validate-input" data-validate = "Ingrese sus productos separados por comas">
-					<textarea class="input100" name="tiendaid" placeholder="Categorías (separadas por coma)"></textarea>
-					<span class="focus-input100"></span>
-				</div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="nit">Nit</label>
+                        <input type="text" class="form-control" id="nit" placeholder="Nit">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="nombreCliente">Nombre</label>
+                        <input type="text" class="form-control" id="nombreCliente" placeholder="Nombre">
+                    </div>
+                </div>
+             
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputProducto">Producto</label>
+                        <select id="inputProducto" class="form-control">
+                            <option selected>Choose...</option>
+                            <option>Nike</option>
+                            <option>Pedro</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="inputCity">Cantidad</label>
+                        <input type="text" class="form-control" id="inputCity">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="inputZip">Precio</label>
+                        <input type="text" class="form-control" id="inputZip">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">
+                        Check me out
+                    </label>
+                    </div>
 
 				<div class="container-contact100-form-btn">
 					<a type="submit" class="contact100-form-btn" >
