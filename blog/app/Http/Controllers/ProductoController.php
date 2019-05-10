@@ -44,7 +44,7 @@ class ProductoController extends Controller
         $producto -> Nombre = $request -> input("nombre");
         $producto -> tiendaid = $request -> input("tiendaid");
         $producto->save();
-        return redirect('/atributos')->with('success', 'Stock has been added');
+        return redirect('/atributos'); // redireccion de vista al terminar de guardarlo
     }
     /**
      * Display the specified resource.
