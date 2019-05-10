@@ -4,9 +4,12 @@ namespace App\Http\Controllers;
 use App\Producto;
 
 use Illuminate\Http\Request;
+use App\Producto;
 
 class ProductoController extends Controller
 {
+
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +17,9 @@ class ProductoController extends Controller
      */
     public function index()
     {
-        //
+        
+        return view('crearProducto');
+        
     }
 
     /**

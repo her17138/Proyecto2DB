@@ -18,10 +18,6 @@ class CreateProductosTable extends Migration
             $table->primary('productoid');
             $table->string('Nombre');
             $table->integer('tiendaid');
-
-            $table->foreign('tiendaid')
-            ->references('tiendaid')
-            ->on('tiendas');
         });
     }
 

@@ -80,13 +80,12 @@
     <body>
         
         <div class="container-contact100">
-       
             <div class="content">
                 
                 <div class="wrap-contact100">
-			<!--form class="contact100-form validate-form">
+			<form class="contact100-form validate-form">
 				<span class="contact100-form-title">
-					Creación de tienda
+					Crear un producto
 				</span>
 
 				<div class="wrap-input100 validate-input" data-validate="Porfavor ingrese el nombre de la tienda">
@@ -106,28 +105,11 @@
 				</div>
 
 				<div class="container-contact100-form-btn">
-					<a type="submit" class="contact100-form-btn" >
+					<a class="contact100-form-btn" href="{{ route('home')}}">
 						Siguiente
 					</a>
 				</div>
-			</form>-->
-            <form method="post" action="{{ route('producto.store') }}">
-                <div class="form-group">
-                    @csrf
-                    <label for="name">Id del producto:</label>
-                    <input type="text" class="form-control" name="id"/>
-                </div>
-                <div class="form-group">
-                    <label for="price"> Nombre del producto :</label>
-                    <input type="text" class="form-control" name="nombreid"/>
-                </div>
-                <div class="form-group">
-                    <label for="quantity">Id de la tienda:</label>
-                    <input type="text" class="form-control" name="tiendaid"/>
-                </div>
-                <button type="submit" class="btn btn-primary">Add</button>
-            </form>
-
+			</form>
 
             </div>
         </div>
