@@ -87,7 +87,7 @@
                     </span>
             <div class="wrap-contact100">
 
-			<form method="post" action= "store" class="contact100-form validate-form" >
+			<form method="post" action= "/store" class="contact100-form validate-form" >
                 {{csrf_field()}}
 				
 				<div class="wrap-input100 validate-input" data-validate="Porfavor ingrese el nombre de la tienda">
