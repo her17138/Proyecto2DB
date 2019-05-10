@@ -21,6 +21,10 @@ Route::get('/atributos', function(){
     return view('atributosProducto');
 }) -> name ('atributosProducto');;
 
+Route::get('/prodForm', function(){
+    return view('ingresarAtrbCategs');
+}) -> name ('ingresarAtrbCategs');;
+
 Route::get("index", 'ProductoController@index');
 Route::post("/producto", 'ProductoController@store');
 
