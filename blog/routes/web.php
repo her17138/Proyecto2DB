@@ -22,6 +22,6 @@ Route::get('/atributos', function(){
 }) -> name ('atributosProducto');;
 
 Route::get("index", 'ProductoController@index');
-Route::post("store", 'ProductoController@store');
+Route::post("/producto", 'ProductoController@store');
 
 

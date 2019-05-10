@@ -40,10 +40,11 @@ class ProductoController extends Controller
     public function store(Request $request)
     {
         $producto = new Producto;
-        $producto -> productoid = Input::get("id");
-        $producto -> nombre = Input::get("producto");
+        $producto -> productoid = $request -> input("id");
+        $producto -> Nombre = $request -> input("nombre");
+        $producto -> tiendaid = $request -> input("tiendaid");
         $producto->save();
-        echo "Success";
+        echo json_encode($producto); //print del objeto para ver que tiene
     }
 
     /**

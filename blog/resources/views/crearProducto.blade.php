@@ -82,13 +82,14 @@
         <div class="container-contact100">
        
             <div class="content">
-                
-                <div class="wrap-contact100">
-			<form class="contact100-form validate-form">
-				<span class="contact100-form-title">
-					Crear un producto
-				</span>
+                <span class="contact100-form-title">
+                        Creación de tienda
+                    </span>
+            <div class="wrap-contact100">
 
+			<form method="post" action= "/store" class="contact100-form validate-form" >
+                {{csrf_field()}}
+				
 				<div class="wrap-input100 validate-input" data-validate="Porfavor ingrese el nombre de la tienda">
 					<input class="input100" type="text" name="name" placeholder="Nombre del producto">
 					<span class="focus-input100"></span>
