@@ -114,15 +114,15 @@
             <form method="post" action="{{ route('producto.store') }}">
                 <div class="form-group">
                     @csrf
-                    <label for="name">Id del producto:</label>
+                    <label for="id">Id del producto:</label>
                     <input type="text" class="form-control" name="id"/>
                 </div>
                 <div class="form-group">
-                    <label for="price"> Nombre del producto :</label>
-                    <input type="text" class="form-control" name="nombreid"/>
+                    <label for="name"> Nombre del producto :</label>
+                    <input type="text" class="form-control" name="nombre"/>
                 </div>
                 <div class="form-group">
-                    <label for="quantity">Id de la tienda:</label>
+                    <label for="storeid">Id de la tienda:</label>
                     <input type="text" class="form-control" name="tiendaid"/>
                 </div>
                 <button type="submit" class="btn btn-primary">Add</button>
