@@ -101,7 +101,7 @@
 
                 <h>
                 <h>
-				<div  data-validate = "Ingrese sus productos separados por comas">
+				<div class="wrap-input100 validate-input" data-validate = "Ingrese sus productos separados por comas">
 					<textarea class="input100" name="message" placeholder="Productos"></textarea>
 					<span class="focus-input100"></span>
 				</div>

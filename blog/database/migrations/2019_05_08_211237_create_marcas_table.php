@@ -22,7 +22,10 @@ class CreateMarcasTable extends Migration
             $table->decimal('precio', 10, 3);
             $table->integer('cantidad');
 
-    
+            $table->foreign('categoriaid')
+            ->references('categoriaid')
+            ->on('categorias');
+
             $table->foreign('productoid')
             ->references('productoid')
             ->on('productos');
