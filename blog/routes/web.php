@@ -25,4 +25,5 @@ Route::get('/facturacion', function(){
     return view('facturacion');
 }) -> name('facturacion');
 
+Route::resource('producto', 'ProductoController');
 

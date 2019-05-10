@@ -17,7 +17,6 @@ class CreateProductosTable extends Migration
             $table->integer('productoid');
             $table->primary('productoid');
             $table->string('Nombre');
-            $table->integer('tiendaid');
         });
     }
 
