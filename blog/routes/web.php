@@ -24,5 +24,8 @@ Route::get('/ap', function(){
 }) -> name ('atributosProducto');;
 
 
+Route::resource('producto', 'ProductoController');
+
+
 
 

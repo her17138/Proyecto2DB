@@ -83,7 +83,7 @@
             <div class="content">
                 
                 <div class="wrap-contact100">
-			<form class="contact100-form validate-form">
+			<!--form class="contact100-form validate-form">
 				<span class="contact100-form-title">
 					Creación de tienda
 				</span>
@@ -104,7 +104,24 @@
 						Siguiente
 					</a>
 				</div>
-			</form>
+			</form>-->
+            <form method="post" action="{{ route('producto.store') }}">
+                <div class="form-group">
+                    @csrf
+                    <label for="name">Share Name:</label>
+                    <input type="text" class="form-control" name="share_name"/>
+                </div>
+                <div class="form-group">
+                    <label for="price">Share Price :</label>
+                    <input type="text" class="form-control" name="share_price"/>
+                </div>
+                <div class="form-group">
+                    <label for="quantity">Share Quantity:</label>
+                    <input type="text" class="form-control" name="share_qty"/>
+                </div>
+                <button type="submit" class="btn btn-primary">Add</button>
+            </form>
+
 
             </div>
         </div>
