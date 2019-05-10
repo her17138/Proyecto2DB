@@ -80,6 +80,7 @@
     <body>
         
         <div class="container-contact100">
+       
             <div class="content">
                 
                 <div class="wrap-contact100">
@@ -105,7 +106,7 @@
 				</div>
 
 				<div class="container-contact100-form-btn">
-					<a class="contact100-form-btn" href="{{ route('home')}}">
+					<a type="submit" class="contact100-form-btn" >
 						Siguiente
 					</a>
 				</div>
