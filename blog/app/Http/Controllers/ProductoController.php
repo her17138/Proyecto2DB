@@ -1,9 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Producto;
 
 use Illuminate\Http\Request;
-use App\Producto;
 
 class ProductoController extends Controller
 {
@@ -46,7 +46,6 @@ class ProductoController extends Controller
         $producto->save();
         echo json_encode($producto); //print del objeto para ver que tiene
     }
-
     /**
      * Display the specified resource.
      *

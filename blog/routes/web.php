@@ -21,9 +21,12 @@ Route::get('/atributos', function(){
     return view('atributosProducto');
 }) -> name ('atributosProducto');;
 
-Route::get('/facturacion', function(){
-    return view('facturacion');
-}) -> name('facturacion');
+
+Route::resource('producto', 'ProductoController');
+
+/*
+Route::get("index", 'ProductoController@index');
+Route::post("/producto", 'ProductoController@store');*/
 
 Route::resource('producto', 'ProductoController');
 
