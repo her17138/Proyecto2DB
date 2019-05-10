@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 Route::get('/atributos', function(){
     return view('atributosProducto');
-}) -> name ('atributosProducto');;
+}) -> name ('atributosProducto');
 
 
 Route::resource('producto', 'ProductoController');

@@ -44,7 +44,7 @@ class ProductoController extends Controller
         $producto -> Nombre = $request -> input("nombre");
         $producto -> tiendaid = $request -> input("tiendaid");
         $producto->save();
-        echo json_encode($producto); //print del objeto para ver que tiene
+        return redirect('/atributos')->with('success', 'Stock has been added');
     }
     /**
      * Display the specified resource.
