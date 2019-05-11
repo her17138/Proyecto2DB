@@ -35,11 +35,10 @@ class AtributoController extends Controller
      */
     public function store(Request $request)
     {
-        echo("hola");
         $attrb = new Atributo;
         $attrb -> nombre = $request -> input("nombre");
         $attrb->save();
-        echo json_encode($attrb);
+        return redirect('/producto');
     }
 
     /**

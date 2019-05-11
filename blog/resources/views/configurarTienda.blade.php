@@ -1,6 +1,8 @@
 @extends('master')
 
 @section('body')
+<form method="post" action="{{ route('atributo.store') }}">
+@csrf
 <h1><b> Datos personalizados </b></h1>
         <!--
         <div class="input-group mb-3">
@@ -59,11 +61,11 @@
             </tr>
         </tfoot>
     </table>
-    <form method="post" action="{{ route('atributo.store') }}">
+
         <div class="container-contact100-form-btn">
-            <a class="contact100-form-btn" style="color: rgb(255,255,255);" action="{{ route('atributo.store') }}">
+            <button class="contact100-form-btn" style="color: rgb(255,255,255);" >
                 Finalizar
-            </a>
+            </button>
         </div>
     </form>
 @endsection
