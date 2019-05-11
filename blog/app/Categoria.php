@@ -9,7 +9,6 @@ class Categoria extends Model
     
     protected $primaryKey = 'categoriaid';
     protected $fillable = [ 
-        'categoriaid',
         'productoid',
         'nombre'
     ];
