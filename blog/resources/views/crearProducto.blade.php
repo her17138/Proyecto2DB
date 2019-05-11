@@ -1,7 +1,7 @@
 @extends('master')
 
 @section('body')
-
+<!--
     <div class="wrap-input100 validate-input" data-validate="Porfavor ingrese el nombre de la tienda">
         <input class="input100" type="text" name="name" placeholder="Nombre del producto">
         <span class="focus-input100"></span>

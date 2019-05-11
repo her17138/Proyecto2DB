@@ -31,7 +31,7 @@ Route::get('/facturacion', function(){
 Route::resource('producto', 'ProductoController');
 Route::resource('factura', 'FacturaController');
 Route::resource('cliente', 'ClienteController');
-Route::resource('atributo', 'AtributoController');
+//Route::resource('atributo', 'AtributoController');
 
 Route::resource('cliente', 'ClienteController');
 

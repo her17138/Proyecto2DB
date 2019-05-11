@@ -33,7 +33,7 @@
         <tbody>
             <tr>
                 <td class="col-sm-4">
-                    <input type="text" name="Nombre" class="form-control" />
+                    <input type="text" name="nombre" class="form-control" />
                 </td>
                 <td class="col-sm-4">                    
                     <select name="datatype">
