@@ -26,5 +26,7 @@ Route::resource('producto', 'ProductoController');
 
 Route::resource('cliente', 'ClienteController');
 
-
+Route::get('/fill', function() {
+    Artisan::call('db:seed');
+});
 
