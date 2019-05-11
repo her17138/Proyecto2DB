@@ -40,9 +40,7 @@ class ProductoController extends Controller
     public function store(Request $request)
     {
         $producto = new Producto;
-        $producto -> productoid = $request -> input("id");
         $producto -> Nombre = $request -> input("nombre");
-        $producto -> tiendaid = $request -> input("tiendaid");
         $producto->save();
         return redirect('/atributos'); // redireccion de vista al terminar de guardarlo
     }
