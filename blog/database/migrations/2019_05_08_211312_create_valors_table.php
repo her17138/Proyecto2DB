@@ -14,20 +14,15 @@ class CreateValorsTable extends Migration
     public function up()
     {
         Schema::create('valores', function (Blueprint $table) {
-            $table->integer('valorid');
+            $table->increments('valorid');
             $table->integer('productoid');
-            $table->integer('marcaid');
             $table->integer('atributoid');
-            $table->primary('valorid');
+            //$table->primary('valorid');
             $table->string('valor');
 
             $table->foreign('productoid')
             ->references('productoid')
             ->on('productos');
-
-            $table->foreign('marcaid')
-            ->references('marcaid')
-            ->on('marcas');
 
             $table->foreign('atributoid')
             ->references('atributoid')

@@ -24,8 +24,7 @@ Route::get('/atributos', function(){
 
 Route::resource('producto', 'ProductoController');
 
-/*
-Route::get("index", 'ProductoController@index');
-Route::post("/producto", 'ProductoController@store');*/
+Route::resource('cliente', 'ClienteController');
+
 
 
