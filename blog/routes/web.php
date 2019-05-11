@@ -33,8 +33,7 @@ Route::resource('factura', 'FacturaController');
 Route::resource('cliente', 'ClienteController');
 Route::resource('atributo', 'AtributoController');
 
-/*
-Route::get("index", 'ProductoController@index');
-Route::post("/producto", 'ProductoController@store');*/
+Route::resource('cliente', 'ClienteController');
+
 
 

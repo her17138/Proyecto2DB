@@ -14,8 +14,8 @@ class CreateAtributosTable extends Migration
     public function up()
     {
         Schema::create('atributos', function (Blueprint $table) {
-            $table->integer('atributoid');
-            $table->primary('atributoid');
+            $table->increments('atributoid');
+            //$table->primary('atributoid');
             $table->string('nombre');
             $table->integer('productoid');
 
