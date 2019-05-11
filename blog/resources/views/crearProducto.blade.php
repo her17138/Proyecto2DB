@@ -1,29 +1,7 @@
 @extends('master')
 
 @section('body')
-<!--
-    <div class="wrap-input100 validate-input" data-validate="Porfavor ingrese el nombre de la tienda">
-        <input class="input100" type="text" name="name" placeholder="Nombre del producto">
-        <span class="focus-input100"></span>
-    </div>
 
-
-    <div class="wrap-input100 validate-input" data-validate = "Ingrese sus productos separados por comas">
-        <textarea class="input100" name="message" placeholder="Atributos del producto (separadas por coma)"></textarea>
-        <span class="focus-input100"></span>
-    </div>
-
-    <div class="wrap-input100 validate-input" data-validate = "Ingrese sus productos separados por comas">
-        <textarea class="input100" name="message" placeholder="Categorías (separadas por coma)"></textarea>
-        <span class="focus-input100"></span>
-    </div>
-
-    <div class="container-contact100-form-btn">
-        <a type="submit" class="contact100-form-btn" >
-            Siguiente
-        </a>
-    </div>
-</form>-->
 <h1>Ingresar un producto </h1>
 <br>
 <form method="post" action="{{ route('producto.store') }}">
@@ -60,22 +38,22 @@
         <div class="form-group col-md-6">
             <label for="inputState">Categoria</label>
             <select name="inputState" class="form-control">
-                <option selected>Seleccione...</option>
-                <option>1</option>
-                <option>2</option>
-                <option>Ninguna</option>
+                <option value="cat1">1</option>
+                <option value="cat2">2</option>
+                <option value="null">Ninguna</option>
             </select>
+            <br>
             <label for="note" style="color:red;font-size:10px;">*Nota si selecciona 1 o 2 asegurese de haber llenado el campo antes*</label>
         </div>
     </div>
     <div class="form-row">
         <div class="form-group col-md-6">
-            <label for="precio">Precio Unitario</label>
-            <input type="text" class="form-control" name="precio" placeholder="Precio">
+            <label for="precio1">Precio Unitario</label>
+            <input type="text" class="form-control" name="precio1" placeholder="Precio">
         </div>
         <div class="form-group col-md-6">
-            <label for="cantidad">Cantidad</label>
-            <input type="text" class="form-control" name="cantidad" placeholder="Cantidad">
+            <label for="cantidad1">Cantidad</label>
+            <input type="text" class="form-control" name="cantidad1" placeholder="Cantidad">
         </div>
     </div>
 
@@ -92,11 +70,11 @@
         <div class="form-group col-md-6">
             <label for="inputState2">Categoria</label>
             <select name="inputState2" class="form-control">
-                <option selected>Seleccione...</option>
-                <option>1</option>
-                <option>2</option>
-                <option>Ninguna</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="0">Ninguna</option>
             </select>
+            <br>
             <label for="note" style="color:red;font-size:10px;">*Nota si selecciona 1 o 2 asegurese de haber llenado el campo antes*</label>
         </div>
     </div>
