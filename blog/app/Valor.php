@@ -8,6 +8,7 @@ class Valor extends Model
 {
     
     protected $primaryKey = 'valorid';
+    public $timestamps = false;
     protected $fillable = [ 
         'valorid',
         'productoid',

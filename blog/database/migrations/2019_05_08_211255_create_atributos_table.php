@@ -17,7 +17,7 @@ class CreateAtributosTable extends Migration
             $table->increments('atributoid');
             //$table->primary('atributoid');
             $table->string('nombre');
-            $table->integer('productoid');
+            $table->integer('productoid') -> nullable();
 
             $table->foreign('productoid')
             ->references('productoid')

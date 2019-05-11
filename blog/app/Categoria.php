@@ -8,6 +8,7 @@ class Categoria extends Model
 {
     
     protected $primaryKey = 'categoriaid';
+    public $timestamps = false;
     protected $fillable = [ 
         'productoid',
         'nombre'
