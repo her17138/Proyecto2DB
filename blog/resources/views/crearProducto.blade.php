@@ -9,6 +9,28 @@
         @csrf
         <label for="name"> Nombre del producto</label>
         <input type="text" class="form-control" name="nombre" placeholder="Nombre del producto"/>
+        <br>
+    </div>
+
+    <div class="form-group">
+        <label > Atributos del producto </label>
+        
+        @foreach ($atributos as $atributo)
+           
+            <div class="row">
+                <div class="col">
+                    <input type="text" class="form-control-plaintext" name="categoria1" value="{{ $atributo->nombre }}"/>
+                    <br>
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" name="{{ $atributo-> atributoid }}" placeholder="Valor"/>
+                    <br>
+                </div>
+            </div>
+            
+            
+        @endforeach
+        
     </div>
 
     <br>

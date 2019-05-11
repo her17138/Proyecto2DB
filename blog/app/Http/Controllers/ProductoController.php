@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Producto;
 use App\Categoria;
 use App\Marca;
+use App\Atributo;
 
 use Illuminate\Http\Request;
 
@@ -18,8 +19,8 @@ class ProductoController extends Controller
      */
     public function index()
     {
-        
-        return view('crearProducto');
+        $atributos = Atributo::all();
+        return view('crearProducto', compact('atributos'));
         
     }
 
@@ -83,7 +84,7 @@ class ProductoController extends Controller
      
         if($catM2 == "1"){
             $marca2 -> categoriaid = $categoria->categoriaid;
-        }elseif($catM2 == "2"){
+        }elseif($catM2   == "2"){
             $marca2 -> categoriaid = $categoria2->categoriaid;
         }
         $marca2->save();
