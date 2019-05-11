@@ -28,6 +28,8 @@
         </a>
     </div>
 </form>-->
+<h1>Ingresar un producto </h1>
+<br>
 <form method="post" action="{{ route('producto.store') }}">
     <div class="form-group">
         @csrf
@@ -42,6 +44,10 @@
         <label for="storeid">Id de la tienda:</label>
         <input type="text" class="form-control" name="tiendaid"/>
     </div>
-    <button type="submit" class="btn btn-primary">Add</button>
+    <div class="container-contact100-form-btn">
+        <a type="submit" class="contact100-form-btn" >
+            Siguiente
+        </a>
+    </div>
 </form>
 @endsection

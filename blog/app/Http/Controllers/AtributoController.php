@@ -34,7 +34,12 @@ class AtributoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $producto = new Atributo;
+        $producto -> atributoid = "1";
+        $producto -> nombre = "color";
+        $producto -> productoid = "1";
+        //$producto->save();
+        return redirect('/producto');
     }
 
     /**

@@ -30,6 +30,8 @@
     <!--===============================================================================================-->
         <link rel="stylesheet" type="text/css" href="css/util.css">
         <link rel="stylesheet" type="text/css" href="css/main.css">
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
 
         <!-- Styles -->
         <style>
@@ -76,6 +78,9 @@
             }
 
         </style>
+        <!--                Javascript                  -->
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" src="{{ URL::asset('js/funciones.js') }}"></script>
     </head>
     <body>
         <div class="container-contact100">
