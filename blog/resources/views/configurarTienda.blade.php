@@ -3,37 +3,18 @@
 @section('body')
 <form method="post" action="{{ route('atributo.store') }}">
 @csrf
-<h1><b> Datos personalizados </b></h1>
-        <!--
-        <div class="input-group mb-3">
-            <input id="userinput" type="text" class="form-control" placeholder="add an item..." aria-label="Add an item" aria-describedby="basic-addon2">
-            <div class="input-group-append">
-            <button class="btn btn-outline-info" id="enter" type="button">Add</button>
-            </div>
-        </div>
-            <div class="col-12">
-            <ul class="list-group">
-            <li class="list-group-item">Jello</li>
-            <li class="list-group-item">Spinach</li>
-            <li class="list-group-item">Rice</li>
-            <li class="list-group-item">Birthday Cake</li>
-            <li class="list-group-item">Candles</li>
-            </ul>
-
-        </div>
-
-        </div>
-        -->
+<h1 style="color:rgb(37,40,80);font-size: 50px;"><b> Datos personalizados </b></h1>
+        <br>
     <table id="datosCustom" class=" table order-list">
         <thead>
             <tr>
-                <td style="text-align:center;">Nombre</td>
-                <td style="text-align:center;">Tipo</td>
-                <td style="text-align:center;">¿Requerido?</td>
+                <td style="text-align:center;font-size: 20px;">Nombre</td>
+                <td style="text-align:center;font-size: 20px;">Tipo</td>
+                <td style="text-align:center;font-size: 20px;">¿Requerido?</td>
             </tr>
         </thead>
         <tbody>
-            <tr>
+            <tr >
                 <td class="col-sm-4">
                     <input type="text" name="nombre0" class="form-control" />
                 </td>
@@ -57,7 +38,7 @@
         <tfoot>
             <tr>
                 <td colspan="5" style="text-align: left;">
-                    <input type="button" class="btn btn-lg btn-block " id="addrow" value="+" />
+                    <input type="button" class="btn btn-info btn-lg btn-block" style="border-radius:100px" id="addrow" value="+" />
                 </td>
             </tr>
             <tr>
