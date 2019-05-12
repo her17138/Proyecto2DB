@@ -5,6 +5,7 @@ use App\Producto;
 use App\Categoria;
 use App\Marca;
 use App\Atributo;
+use App\Valor;
 
 use Illuminate\Http\Request;
 
@@ -89,6 +90,18 @@ class ProductoController extends Controller
         }
         $marca2->save();
        
+        $atributos = Atributo::all();
+
+        foreach ($atributos as $atributo){
+            $val = $atributo->atributoid;
+            $valor = new Valor;
+            $valor -> productoid = $producto->productoid;
+            $valor -> atributoid = $atributo->atributoid;
+            $valor -> valor = $request -> input("$val");
+            $valor->save();
+        }
+      
+
         
         return redirect('/atributos'); // redireccion de vista al terminar de guardarlo
     }

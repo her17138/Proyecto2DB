@@ -13,7 +13,7 @@ class CreateValorsTable extends Migration
      */
     public function up()
     {
-        Schema::create('valores', function (Blueprint $table) {
+        Schema::create('valors', function (Blueprint $table) {
             $table->increments('valorid');
             $table->integer('productoid');
             $table->integer('atributoid');
@@ -37,6 +37,6 @@ class CreateValorsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('valores');
+        Schema::dropIfExists('valors');
     }
 }
