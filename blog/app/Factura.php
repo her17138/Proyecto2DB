@@ -11,7 +11,6 @@ class Factura extends Model
     protected $fillable = [ 
         'facturaid',
         'clienteNIT',
-        'fecha',
         'direccion',
         'total'
     ];
