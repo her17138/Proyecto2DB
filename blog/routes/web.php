@@ -16,26 +16,16 @@ Route::get('/', function () {
 }) -> name ('home');
 
 
+
 Route::get('/atributos', function(){
     return view('atributosProducto');
-}) -> name ('atributosProducto');
+}) -> name ('atributosProducto');;
 
-Route::get('/configTienda', function(){
-    return view('configurarTienda');
-}) -> name ('configTienda');
-
-Route::get('/facturacion', function(){
-    return view('facturacion');
-}) -> name ('facturacion');
 
 Route::resource('producto', 'ProductoController');
-Route::resource('factura', 'FacturaController');
-Route::resource('cliente', 'ClienteController');
-//Route::resource('atributo', 'AtributoController');
 
-Route::resource('cliente', 'ClienteController');
+/*
+Route::get("index", 'ProductoController@index');
+Route::post("/producto", 'ProductoController@store');*/
 
-Route::get('/fill', function() {
-    Artisan::call('db:seed');
-});
 

@@ -25,24 +25,3 @@ $factory->define(User::class, function (Faker $faker) {
         'remember_token' => Str::random(10),
     ];
 });
-
-$factory->define(App\Cliente::class, function(Faker $faker) {
-    return [
-    'clienteNIT' => $faker->unique()->randomNumber(7),
-    'Nombre' => $faker->firstName(),
-    'Apellido' => $faker -> lastName(),
-    'Telefono' => $faker -> randomNumber(7),
-    'Direccion' => $faker -> streetAddress(),
-    ];
-});
-
-$factory->define(App\Factura::class, function(Faker $faker) {
-
-    $client = App\Cliente::all()->pluck('clienteNIT')->toArray();
-    return [
-    'clienteNIT' => $faker->randomElement($client),
-    'fecha' => $faker->date('Y-m-d'),
-    'direccion' => $faker -> streetAddress(),
-    'total' => $faker -> randomNumber(3),
-    ];
-});

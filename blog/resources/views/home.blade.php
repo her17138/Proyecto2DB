@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Home</title>
+        <title>Facturacion tiendas</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -67,27 +67,14 @@
             .m-b-md {
                 margin-bottom: 100px;
             }
-
-            .button {
-                font: bold 11px Arial;
-                text-decoration: none;
-                background-color: #EEEEEE;
-                color: #333333;
-                padding: 2px 6px 2px 6px;
-                border-top: 1px solid #CCCCCC;
-                border-right: 1px solid #333333;
-                border-bottom: 1px solid #333333;
-                border-left: 1px solid #CCCCCC;
-            }
         </style>
     </head>
     <body>
         
             <div class="content">
                 <div class="title m-b-md" id="titulo">
-                    HOME
+                    Facturación de tiendas
                 </div>
-                <a  class= 'button' href='/fill'>Simular dia</a>
 
             </div>
         </div>

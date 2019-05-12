@@ -30,8 +30,6 @@
     <!--===============================================================================================-->
         <link rel="stylesheet" type="text/css" href="css/util.css">
         <link rel="stylesheet" type="text/css" href="css/main.css">
-        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-
 
         <!-- Styles -->
         <style>
@@ -43,44 +41,78 @@
                 height: 100vh;
                 margin: 0;
             }
+
             .full-height {
                 height: 100vh;
             }
+
             #titulo{
                 font-family: 'Anton', sans-serif;
                 
             }
+
             .flex-center {
                 align-items: center;
                 display: flex;
                 justify-content: center;
             }
+
             .position-ref {
                 position: relative;
             }
+
             .top-right {
                 position: absolute;
                 right: 10px;
                 top: 18px;
             }
+
             .content {
                 text-align: center;
             }
+
             .title {
                 font-size: 84px;
             }
+
         </style>
-        <!--                Javascript                  -->
-        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-        <script type="text/javascript" src="{{ URL::asset('js/funciones.js') }}"></script>
     </head>
     <body>
+        
         <div class="container-contact100">
             <div class="content">
+                
                 <div class="wrap-contact100">
-                    @yield('body')
-                </div>
+			<form class="contact100-form validate-form">
+				<span class="contact100-form-title">
+					Crear un producto
+				</span>
+
+				<div class="wrap-input100 validate-input" data-validate="Porfavor ingrese el nombre de la tienda">
+					<input class="input100" type="text" name="name" placeholder="Nombre del producto">
+					<span class="focus-input100"></span>
+				</div>
+
+
+				<div class="wrap-input100 validate-input" data-validate = "Ingrese sus productos separados por comas">
+					<textarea class="input100" name="message" placeholder="Atributos del producto (separadas por coma)"></textarea>
+					<span class="focus-input100"></span>
+				</div>
+
+                <div class="wrap-input100 validate-input" data-validate = "Ingrese sus productos separados por comas">
+					<textarea class="input100" name="message" placeholder="Categorías (separadas por coma)"></textarea>
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="container-contact100-form-btn">
+					<a class="contact100-form-btn" href="{{ route('home')}}">
+						Siguiente
+					</a>
+				</div>
+			</form>
+
             </div>
+        </div>
         </div>
     </body>
 </html>

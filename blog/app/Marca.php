@@ -8,7 +8,6 @@ class Marca extends Model
 {
 
     protected $primaryKey = 'marcaid';
-    public $timestamps = false;
     protected $fillable = [ 
         'marcaid',
         'productoid',
