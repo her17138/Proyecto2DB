@@ -6,13 +6,6 @@
 <script type="text/javascript">var productos = '<?= $productos ?>';</script>
 
 
-@if (session('error'))
-    <div class="alert">
-        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-        <strong>Danger!</strong> <span>{{ $errors->first() }}</span>
-    </div>
-@endif
-
 <form method="post" action="{{ route('factura.store') }}">
 @csrf
     <h1><b> Facturación </b></h1>
@@ -30,6 +23,14 @@
             <input type="text" class="form-control" name="Nombre" placeholder="Nombre del cliente">
         </div>
     </div>
+    <br>
+
+    @if (session('error'))
+        <div class="alert">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+            <strong>Danger!</strong> <span>{{ session('error') }}</span>
+        </div>
+    @endif
     <br>
     <div class="form-group">
         <label for="direccion">Dirección</label>

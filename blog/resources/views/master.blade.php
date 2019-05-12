@@ -67,37 +67,13 @@
         <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
         <script type="text/javascript" src="{{ URL::asset('js/funciones.js') }}"></script>
     </head>
-    <header>
-        <nav class="navbar navbar-expand-sm   navbar-light bg-light">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li class="nav-item">
-                <a class="nav-link" href="/" style="font-size: 18px;">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="/configurarTienda" style="font-size: 18px;">Configurar tienda</a>
-                </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/cliente" style="font-size: 18px;">Agregar Cliente</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/producto" style="font-size: 18px;">Agregar producto</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/factura" style="font-size: 18px;">Facturación</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/fill" style="font-size: 18px;">Simular dia de ventas</a>
-            </li>
-            
-            </ul>
-            <div class="social-part">
-                <a class="fa fa-github" href="https://github.com/diazMafer" aria-hidden="true"></a>
-            </div>
+    <div id="preloader">
+            <div id="preloader_spinner">
+				<div class="pre_inner">
+					<div class="dot dot-1"></div>
+					<div class="dot dot-2"></div>
+					<div class="dot dot-3"></div>
+				</div>
             </div>
         </div>
        

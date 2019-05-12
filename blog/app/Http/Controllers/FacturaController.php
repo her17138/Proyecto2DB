@@ -43,7 +43,7 @@ class FacturaController extends Controller
     public function store(Request $request)
     {
         try{
-            print_r($request -> all());
+            //print_r($request -> all());
             $input = $request -> all();
             $idfac = count(Factura::all()) +1; //id de factura
 
