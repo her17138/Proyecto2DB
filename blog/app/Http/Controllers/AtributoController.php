@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Atributo;
 
 class AtributoController extends Controller
 {
@@ -34,7 +35,17 @@ class AtributoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request -> all();
+        print_r($input);
+        //guardar todos los atributos que vienen del request
+        /*for($i=0; $i < (int)((count($input) - 1)/3); $i++) {
+            $attrb = new Atributo;
+            $attrb -> nombre = $request -> input("nombre".$i);
+            $attrb -> datatype = $request -> input("datatype".$i);
+            $attrb -> required = $request -> input("required".$i);
+            $attrb->save();
+        }*/
+        //return redirect('/producto');
     }
 
     /**

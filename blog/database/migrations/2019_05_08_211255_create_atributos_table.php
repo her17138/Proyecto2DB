@@ -14,11 +14,12 @@ class CreateAtributosTable extends Migration
     public function up()
     {
         Schema::create('atributos', function (Blueprint $table) {
-            $table->integer('atributoid');
-            $table->primary('atributoid');
+            $table->increments('atributoid');
+            //$table->primary('atributoid');
             $table->string('nombre');
-            $table->integer('productoid');
-
+            $table->integer('productoid') -> nullable();
+            $table->string('datatype');
+            $table->string('required');
             $table->foreign('productoid')
             ->references('productoid')
             ->on('productos');

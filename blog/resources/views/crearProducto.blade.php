@@ -1,136 +1,120 @@
-<!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('master')
 
-        <title>Creacion de tiendas</title>
+@section('body')
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
-
-        <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
-    <!--===============================================================================================-->
-        <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
-    <!--===============================================================================================-->
-        <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-    <!--===============================================================================================-->
-        <link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
-    <!--===============================================================================================-->
-        <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
-    <!--===============================================================================================-->
-        <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
-    <!--===============================================================================================-->
-        <link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
-    <!--===============================================================================================-->
-        <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
-    <!--===============================================================================================-->
-        <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
-    <!--===============================================================================================-->
-        <link rel="stylesheet" type="text/css" href="css/util.css">
-        <link rel="stylesheet" type="text/css" href="css/main.css">
-
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            #titulo{
-                font-family: 'Anton', sans-serif;
-                
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-        </style>
-    </head>
-    <body>
+<form method="post" action="{{ route('producto.store') }}">
+<h1 style="color:rgb(37,40,80);font-size: 50px;"><b> Ingreso de productos </b></h1>
+<br>
+    <div class="form-group">
+        @csrf
+        <label for="name" style="font-size: 20px;"> Nombre del producto</label>
+        <input type="text" class="form-control" name="nombre" placeholder="Nombre del producto"/>
         
-        <div class="container-contact100">
-       
-            <div class="content">
-                
-                <div class="wrap-contact100">
-			<!--form class="contact100-form validate-form">
-				<span class="contact100-form-title">
-					Creación de tienda
-				</span>
+    </div>
 
-				<div class="wrap-input100 validate-input" data-validate="Porfavor ingrese el nombre de la tienda">
-					<input class="input100" type="text" name="name" placeholder="Nombre del producto">
-					<span class="focus-input100"></span>
-				</div>
-
-
-				<div class="wrap-input100 validate-input" data-validate = "Ingrese sus productos separados por comas">
-					<textarea class="input100" name="message" placeholder="Atributos del producto (separadas por coma)"></textarea>
-					<span class="focus-input100"></span>
-				</div>
-
-                <div class="wrap-input100 validate-input" data-validate = "Ingrese sus productos separados por comas">
-					<textarea class="input100" name="message" placeholder="Categorías (separadas por coma)"></textarea>
-					<span class="focus-input100"></span>
-				</div>
-
-				<div class="container-contact100-form-btn">
-					<a type="submit" class="contact100-form-btn" >
-						Siguiente
-					</a>
-				</div>
-			</form>-->
-            <form method="post" action="{{ route('producto.store') }}">
-                <div class="form-group">
-                    @csrf
-                    <label for="id">Id del producto:</label>
-                    <input type="text" class="form-control" name="id"/>
+    <div class="form-group">
+        <label style="font-size: 20px;"> Atributos del producto </label>
+        
+        @foreach ($atributos as $atributo)
+           
+            <div class="row">
+                <div class="col">
+                    <input type="text" class="form-control-plaintext" name="categoria1" value="{{ $atributo->nombre }}"/>
+                    <br>
                 </div>
-                <div class="form-group">
-                    <label for="name"> Nombre del producto :</label>
-                    <input type="text" class="form-control" name="nombre"/>
+                <div class="col">
+                    <input type="text" class="form-control" name="{{ $atributo-> atributoid }}" placeholder="Valor"/>
+                    <br>
                 </div>
-                <div class="form-group">
-                    <label for="storeid">Id de la tienda:</label>
-                    <input type="text" class="form-control" name="tiendaid"/>
-                </div>
-                <button type="submit" class="btn btn-primary">Add</button>
-            </form>
+            </div>
+            
+            
+        @endforeach
+        
+    </div>
 
-
+    <br>
+    <div class="form-group">
+        <div class="row">
+            <div class="col">
+                <label for="categoria1" style="font-size: 20px;">Categoria 1</label>
+                <input type="text" class="form-control" name="categoria1" placeholder="Nombre categoria"/>
+            </div>
+            <div class="col">
+                <label for="categoria2" style="font-size: 20px;">Categoria 2</label>
+                <input type="text" class="form-control" name="categoria2" placeholder="Nombre categoria"/>
             </div>
         </div>
+    </div>
+
+    <br>
+    <hr>
+    <div>
+        <span style="color:rgb(37,40,80);font-size: 25px;text-decoration: underline;">Marca</span>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="nombre1" style="font-size: 20px;">Nombre</label>
+            <input type="text" class="form-control" name="nombre1" placeholder="Nombre">
         </div>
-    </body>
-</html>
+        <div class="form-group col-md-6">
+            <label for="inputState" style="font-size: 20px;">Categoria</label>
+            <select name="inputState" class="form-control">
+                <option value="cat1">1</option>
+                <option value="cat2">2</option>
+                <option value="null">Ninguna</option>
+            </select>
+            
+            <label for="note" style="color:red;font-size:12px;">*Nota si selecciona 1 o 2 asegurese de haber llenado el campo antes*</label>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="precio1" style="font-size: 20px;">Precio Unitario</label>
+            <input type="text" class="form-control" name="precio1" placeholder="Precio">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="cantidad1" style="font-size: 20px;">Cantidad</label>
+            <input type="text" class="form-control" name="cantidad1" placeholder="Cantidad">
+        </div>
+    </div>
+
+    <br>
+    <hr>
+    <div>
+        <span style="color:rgb(37,40,80);font-size: 25px;text-decoration: underline;">Marca</span>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="nombre2" style="font-size: 20px;">Nombre</label>
+            <input type="text" class="form-control" name="nombre2" placeholder="Nombre">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="inputState2" style="font-size: 20px;">Categoria</label>
+            <select name="inputState2" class="form-control">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="0">Ninguna</option>
+            </select>
+            
+            <label for="note" style="color:red;font-size:12px;">*Nota si selecciona 1 o 2 asegurese de haber llenado el campo antes*</label>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="precio2" style="font-size: 20px;">Precio Unitario</label>
+            <input type="text" class="form-control" name="precio2" placeholder="Precio">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="cantidad2" style="font-size: 20px;">Cantidad</label>
+            <input type="text" class="form-control" name="cantidad2" placeholder="Cantidad">
+        </div>
+    </div>
+    
+    <div class="container-contact100-form-btn">
+        <button class="contact100-form-btn btn-block" href="/home">
+            Agregar
+        </button>
+    </div>
+</form>
+@endsection

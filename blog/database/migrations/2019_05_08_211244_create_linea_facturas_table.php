@@ -14,11 +14,11 @@ class CreateLineaFacturasTable extends Migration
     public function up()
     {
         Schema::create('linea_facturas', function (Blueprint $table) {
-            $table->integer('lineaid');
+            $table->increments('lineaid');
             $table->integer('productoid');
             $table->integer('marcaid');
             $table->integer('facturaid');
-            $table->primary('lineaid');
+            //$table->primary('lineaid');
             $table->integer('cantidad');
             $table->decimal('preciounitario', 10, 3);
 
