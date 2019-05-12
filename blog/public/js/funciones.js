@@ -1,15 +1,15 @@
 //referencia: https://bootsnipp.com/snippets/402bQ
 //funciones para la tabla de configurar tienda
 $(document).ready(function () {
-    var counter = 0;
+    var counter = 1;
 
     $("#addrow").on("click", function () {
         var newRow = $("<tr>");
         var cols = "";
 
-        cols += '<td><input type="text" class="form-control" name="nombre' + counter + '"/></td>';
-        cols += '<td> <select name="cars">  <option value="int">Números enteros</option> <option value="float">Números reales</option> <option value="string">Texto</option></select></td>';
-        cols += '<td  style="text-align:center" ><input type="checkbox" name="required" checked></td>';
+        cols += '<td class="col-sm-4"> <input type="text" name="nombre' + counter +'" class="form-control" /> </td>';
+        cols += '<td class="col-sm-4"> <select name="datatype' + counter +'">  <option value="int">Números enteros</option> <option value="float">Números reales</option> <option value="string">Texto</option></select></td>';
+        cols += '<td  style="text-align:center" class="col-sm-4" ><input type="checkbox" name="required' + counter +'" checked></td>';
 
         cols += '<td><input type="button" class="ibtnDel btn btn-md btn-danger "  value="Borrar"></td>';
         newRow.append(cols);

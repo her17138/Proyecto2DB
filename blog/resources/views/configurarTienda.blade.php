@@ -35,17 +35,20 @@
         <tbody>
             <tr>
                 <td class="col-sm-4">
-                    <input type="text" name="nombre" class="form-control" />
+                    <input type="text" name="nombre0" class="form-control" />
                 </td>
                 <td class="col-sm-4">                    
-                    <select name="datatype">
+                    <select name="datatype0">
                     <option value="int">Números enteros</option>
                     <option value="float">Números reales</option>
                     <option value="string">Texto</option>
                     </select>
                 </td>
-                <td class="col-sm-3"  style="text-align:center">
+                <!--td class="col-sm-3"  style="text-align:center">
                     <input type="checkbox" id="defaultChecked" checked>
+                </td-->
+                <td  style="text-align:center" class="col-sm-4">
+                    <input type="checkbox" name="required0" checked>
                 </td>
                 <td class="col-sm-2"><a class="deleteRow"></a>
                 </td>

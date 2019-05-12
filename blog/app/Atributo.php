@@ -11,6 +11,8 @@ class Atributo extends Model
     protected $fillable = [ 
         'atributoid',
         'productoid',
-        'nombre'
+        'nombre',
+        'datatype',
+        'required'
     ];
 }
