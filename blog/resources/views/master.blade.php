@@ -30,7 +30,7 @@
     <!--===============================================================================================-->
         <link rel="stylesheet" type="text/css" href="css/util.css">
         <link rel="stylesheet" type="text/css" href="css/main.css">
-        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 
 
         <!-- Styles -->
@@ -74,6 +74,34 @@
         <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
         <script type="text/javascript" src="{{ URL::asset('js/funciones.js') }}"></script>
     </head>
+    <header>
+    <nav class="navbar navbar-expand-sm   navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/configTienda">Configurar tienda</a>
+            </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/cliente">Agregar Cliente</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Call</a>
+          </li>
+           
+          </ul>
+          <div class="social-part">
+            <a class="fa fa-github" href="https://github.com/diazMafer" aria-hidden="true"></a>
+          </div>
+        </div>
+    </nav>
+    </header>
     <body>
         <div class="container-contact100">
             <div class="content">
