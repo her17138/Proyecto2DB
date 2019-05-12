@@ -31,7 +31,7 @@
 
 body, html {
   color: #636b6f;
-  font-family: 'Kurale', serif;
+  font-family: 'Nunito', serif;
   font-weight: 200;
 
   margin: 0;
@@ -45,7 +45,7 @@ body, html {
   height: 100vh;
 }
 #titulo{
-  font-family: 'Kurale', serif;
+  font-family: 'Nunito', serif;
   
 }
 .flex-center {
@@ -73,7 +73,7 @@ body, html {
 }
 /*---------------------------------------------*/
 a {
-	font-family: 'Kurale', serif;
+	font-family: 'Nunito', serif;
 	font-size: 14px;
 	line-height: 1.7;
 	color: #666666;
@@ -99,7 +99,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 p {
-	font-family: 'Kurale', serif;
+	font-family: 'Nunito', serif;
 	font-size: 14px;
 	line-height: 1.7;
 	color: #666666;
@@ -180,7 +180,7 @@ iframe {
 
 
 .wrap-contact100 {
-  font-family: 'Kurale', serif;
+  font-family: 'Nunito', serif;
   width: 800px;
   background-color: rgba(255,255,255,0.7);
   border-radius: 10px;
@@ -204,7 +204,7 @@ iframe {
 
 .contact100-form-title {
   display: block;
-  font-family: 'Kurale', serif;
+  font-family: 'Nunito', serif;
   font-size: 30px;
   color: #333333;
   line-height: 1.2;

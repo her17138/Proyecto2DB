@@ -2,7 +2,7 @@
 
 @section('body')
 
-<form method="post" action="{{ route('cliente.store') }}">
+<form method="post" action="{{ route('cliente.store') }}" >
 <h1 style="color:rgb(37,40,80);font-size: 50px;"><b> Ingreso de clientes </b></h1>
 <br>
     <div class="form-group">
