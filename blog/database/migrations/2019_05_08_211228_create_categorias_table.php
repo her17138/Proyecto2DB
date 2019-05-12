@@ -16,7 +16,7 @@ class CreateCategoriasTable extends Migration
         Schema::create('categorias', function (Blueprint $table) {
             $table->increments('categoriaid');
             //$table->primary('categoriaid');
-            $table->integer('productoid');
+            $table->integer('productoid')->nullable();
             $table->string('Nombre');
 
             $table->foreign('productoid')

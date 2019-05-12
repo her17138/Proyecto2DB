@@ -11,42 +11,6 @@
         <input type="text" class="form-control" name="nombre" placeholder="Nombre del producto"/>
         
     </div>
-
-    <div class="form-group">
-        <label style="font-size: 20px;"> Atributos del producto </label>
-        
-        @foreach ($atributos as $atributo)
-           
-            <div class="row">
-                <div class="col">
-                    <input type="text" class="form-control-plaintext" name="categoria1" value="{{ $atributo->nombre }}"/>
-                    <br>
-                </div>
-                <div class="col">
-                    <input type="text" class="form-control" name="{{ $atributo-> atributoid }}" placeholder="Valor"/>
-                    <br>
-                </div>
-            </div>
-            
-            
-        @endforeach
-        
-    </div>
-
-    <br>
-    <div class="form-group">
-        <div class="row">
-            <div class="col">
-                <label for="categoria1" style="font-size: 20px;">Categoria 1</label>
-                <input type="text" class="form-control" name="categoria1" placeholder="Nombre categoria"/>
-            </div>
-            <div class="col">
-                <label for="categoria2" style="font-size: 20px;">Categoria 2</label>
-                <input type="text" class="form-control" name="categoria2" placeholder="Nombre categoria"/>
-            </div>
-        </div>
-    </div>
-
     <br>
     <hr>
     <div>
@@ -60,12 +24,10 @@
         <div class="form-group col-md-6">
             <label for="inputState" style="font-size: 20px;">Categoria</label>
             <select name="inputState" class="form-control">
-                <option value="cat1">1</option>
-                <option value="cat2">2</option>
-                <option value="null">Ninguna</option>
+                @foreach ($categorias as $categoria)
+                <option value="{{ $categoria-> categoriaid }}">{{ $categoria-> categoriaid }}</option>
+                @endforeach
             </select>
-            
-            <label for="note" style="color:red;font-size:12px;">*Nota si selecciona 1 o 2 asegurese de haber llenado el campo antes*</label>
         </div>
     </div>
     <div class="form-row">
@@ -77,6 +39,28 @@
             <label for="cantidad1" style="font-size: 20px;">Cantidad</label>
             <input type="text" class="form-control" name="cantidad1" placeholder="Cantidad">
         </div>
+    </div>
+
+    <br>
+    <div class="form-group">
+        <label style="font-size: 20px;"> Atributos del producto </label>
+        
+        @foreach ($atributos as $atributo)
+           
+            <div class="row">
+                <div class="col">
+                    <input type="text" class="form-control-plaintext" style="font-size: 22px;text-align:center;" name="categoria1" value="{{ $atributo->nombre }}"/>
+                    <br>
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" name="{{ $atributo-> atributoid }}" placeholder="Valor"/>
+                    <br>
+                </div>
+            </div>
+            
+            
+        @endforeach
+        
     </div>
 
     <br>
@@ -92,12 +76,10 @@
         <div class="form-group col-md-6">
             <label for="inputState2" style="font-size: 20px;">Categoria</label>
             <select name="inputState2" class="form-control">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="0">Ninguna</option>
+                @foreach ($categorias as $categoria)
+                <option value="{{ $categoria-> categoriaid }}">{{ $categoria-> categoriaid }}</option>
+                @endforeach
             </select>
-            
-            <label for="note" style="color:red;font-size:12px;">*Nota si selecciona 1 o 2 asegurese de haber llenado el campo antes*</label>
         </div>
     </div>
     <div class="form-row">
@@ -109,6 +91,28 @@
             <label for="cantidad2" style="font-size: 20px;">Cantidad</label>
             <input type="text" class="form-control" name="cantidad2" placeholder="Cantidad">
         </div>
+    </div>
+
+    <br>
+    <div class="form-group">
+        <label style="font-size: 20px;"> Atributos del producto </label>
+        
+        @foreach ($atributos as $atributo)
+           
+            <div class="row">
+                <div class="col">
+                    <input type="text" class="form-control-plaintext" style="font-size: 22px;text-align:center;" name="atributo" value="{{ $atributo->nombre }}"/>
+                    <br>
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" name="{{ $atributo-> nombre }}" placeholder="Valor"/>
+                    <br>
+                </div>
+            </div>
+            
+            
+        @endforeach
+        
     </div>
     
     <div class="container-contact100-form-btn">
