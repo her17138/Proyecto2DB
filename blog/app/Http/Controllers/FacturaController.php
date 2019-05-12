@@ -42,35 +42,42 @@ class FacturaController extends Controller
      */
     public function store(Request $request)
     {
-        print_r($request -> all());
-        $input = $request -> all();
-        $idfac = count(Factura::all()) +1; //id de factura
+        try{
+            print_r($request -> all());
+            $input = $request -> all();
+            $idfac = count(Factura::all()) +1; //id de factura
 
-        $length = (int)((count($input) -3 )/3); // lineas de factura ingresada
-        
-        $suma =0;
-        //loop para obtener el precio total 
-        for($i=0; $i <= $length; $i++) {
-            $suma += $request -> input("precio".$i);
-        }
-        $factura = new Factura;
-        $factura -> clienteNIT = $request -> input("clienteNIT");
-        $factura -> total = $suma;
-        $factura -> direccion = $request -> input("direccion");
-        $factura -> save();
-        
-        //loop para las lineas de la factura
-        for($i=0; $i <= $length; $i++) {
-            $il = new LineaFactura;
-            $il -> productoid = $request -> input("producto".$i);
-            $il -> marcaid = $request -> input("marca".$i);
-            $il -> facturaid = $idfac;
-            $il -> cantidad = $request -> input("cantidad".$i);
-            $il -> preciounitario = $request -> input("precio".$i);
-            if(!is_null($request -> input("producto".$i))){
-                $il->save();
+            $length = (int)((count($input) -3 )/3); // lineas de factura ingresada
+            
+            $suma =0;
+            //loop para obtener el precio total 
+            for($i=0; $i <= $length; $i++) {
+                $suma += $request -> input("precio".$i);
+            }
+            $factura = new Factura;
+            $factura -> clienteNIT = $request -> input("clienteNIT");
+            $factura -> total = $suma;
+            $factura -> direccion = $request -> input("direccion");
+            $factura -> saveOrFail();
+            
+            //loop para las lineas de la factura
+            for($i=0; $i <= $length; $i++) {
+                $il = new LineaFactura;
+                $il -> productoid = $request -> input("producto".$i);
+                $il -> marcaid = $request -> input("marca".$i);
+                $il -> facturaid = $idfac;
+                $il -> cantidad = $request -> input("cantidad".$i);
+                $il -> preciounitario = $request -> input("precio".$i);
+                if(!is_null($request -> input("producto".$i))){
+                    $il->save();
+                }
             }
         }
+        catch (\Illuminate\Database\QueryException $exception) {
+            return back()->withError($exception->getMessage())->withInput();
+
+        }
+
 
     }
 

@@ -4,6 +4,15 @@
 
 <script type="text/javascript">var marcas = '<?= $marcas ?>';</script>
 <script type="text/javascript">var productos = '<?= $productos ?>';</script>
+
+
+@if (session('error'))
+    <div class="alert">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+        <strong>Danger!</strong> <span>{{ $errors->first() }}</span>
+    </div>
+@endif
+
 <form method="post" action="{{ route('factura.store') }}">
 @csrf
     <h1><b> Facturación </b></h1>
@@ -81,7 +90,28 @@
         </div>
     </form>
 @endsection
+<style>
+.alert {
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+}
 
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+</style>
 <script>
 
 </script>
