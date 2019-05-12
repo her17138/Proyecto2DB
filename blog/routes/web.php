@@ -22,7 +22,7 @@ Route::get('/atributos', function(){
 
 Route::get('/configurarTienda', function(){
     return view('configurarTienda');
-}) -> name ('configTienda');
+}) -> name ('configurarTienda');
 /*
 Route::get('/facturacion', function(){
     return view('facturacion');

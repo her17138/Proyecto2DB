@@ -41,7 +41,6 @@ $factory->define(App\Factura::class, function(Faker $faker) {
     $client = App\Cliente::all()->pluck('clienteNIT')->toArray();
     return [
     'clienteNIT' => $faker->randomElement($client),
-    'fecha' => $faker->date('Y-m-d'),
     'direccion' => $faker -> streetAddress(),
     'total' => $faker -> randomNumber(3),
     ];

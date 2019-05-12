@@ -62,7 +62,7 @@
                 <a class="nav-link" href="/" style="font-size: 18px;">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="/configTienda" style="font-size: 18px;">Configurar tienda</a>
+                <a class="nav-link" href="/configurarTienda" style="font-size: 18px;">Configurar tienda</a>
                 </li>
             <li class="nav-item">
                 <a class="nav-link" href="/cliente" style="font-size: 18px;">Agregar Cliente</a>
@@ -71,7 +71,7 @@
                 <a class="nav-link" href="/producto" style="font-size: 18px;">Agregar producto</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/producto" style="font-size: 18px;">Facturación</a>
+                <a class="nav-link" href="/factura" style="font-size: 18px;">Facturación</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/fill" style="font-size: 18px;">Simular dia de ventas</a>
