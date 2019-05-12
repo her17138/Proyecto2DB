@@ -30,13 +30,50 @@
 }
 
 body, html {
-	height: 100%;
-	font-family: SourceSansPro-Regular, sans-serif;
+  color: #636b6f;
+  font-family: 'Kurale', serif;
+  font-weight: 200;
+
+  margin: 0;
+  background-image: url('../images/home-banner.png');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
+
+.full-height {
+  height: 100vh;
+}
+#titulo{
+  font-family: 'Kurale', serif;
+  
+}
+.flex-center {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.position-ref {
+  position: relative;
+}
+.top-right {
+  position: absolute;
+  right: 10px;
+  top: 18px;
+}
+.content, .container {
+  text-align: center;
+  background-color: rgba(255,255,255,0);
+}
+.title {
+  font-size: 84px;
+}
+.form-control {
+  border-radius: 100px;
+}
 /*---------------------------------------------*/
 a {
-	font-family: SourceSansPro-Regular;
+	font-family: 'Kurale', serif;
 	font-size: 14px;
 	line-height: 1.7;
 	color: #666666;
@@ -57,11 +94,12 @@ a:hover {
 
 /*---------------------------------------------*/
 h1,h2,h3,h4,h5,h6 {
-	margin: 0px;
+  margin: 0px;
+  
 }
 
 p {
-	font-family: SourceSansPro-Regular;
+	font-family: 'Kurale', serif;
 	font-size: 14px;
 	line-height: 1.7;
 	color: #666666;
@@ -116,10 +154,6 @@ iframe {
 }
 
 
-/*---------------------------------------------*/
-.container {
-	max-width: 1200px;
-}
 
 
 
@@ -136,51 +170,28 @@ iframe {
   display: -ms-flexbox;
   display: flex;
   flex-wrap: wrap;
+  text-align: center;
   justify-content: center;
   align-items: center;
   padding: 15px;
-  position: relative;
+  position: center;
   z-index: 1;
 }
 
-.container-contact100::before {
-  content: "";
-  display: block;
-  position: absolute;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background: rgba(93,84,240,0.5);
-  background: -webkit-linear-gradient(left, rgba(0,168,255,0.5), rgba(185,0,255,0.5));
-  background: -o-linear-gradient(left, rgba(0,168,255,0.5), rgba(185,0,255,0.5));
-  background: -moz-linear-gradient(left, rgba(0,168,255,0.5), rgba(185,0,255,0.5));
-  background: linear-gradient(left, rgba(0,168,255,0.5), rgba(185,0,255,0.5));
-  pointer-events: none;
-}
-
-.contact100-map {
-  position: absolute;
-  z-index: -2;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-}
 
 .wrap-contact100 {
+  font-family: 'Kurale', serif;
   width: 800px;
-  background: #fff;
+  background-color: rgba(255,255,255,0.7);
   border-radius: 10px;
   overflow: hidden;
-  padding: 72px 150px 25px 150px;
-
-  box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
-  -moz-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
-  -webkit-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
-  -o-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
-  -ms-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+  position: center;
+  padding: 50px 150px 25px 150px;
+  box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 1);
+  -moz-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.5);
+  -o-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.5);
+  -ms-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.5);
 }
 
 
@@ -193,7 +204,7 @@ iframe {
 
 .contact100-form-title {
   display: block;
-  font-family: SourceSansPro-Bold;
+  font-family: 'Kurale', serif;
   font-size: 30px;
   color: #333333;
   line-height: 1.2;
@@ -212,11 +223,11 @@ iframe {
   margin-bottom: 30px;
 }
 
-.input100 {
+.input {
   display: block;
   width: 100%;
   background: transparent;
-  font-family: SourceSansPro-Bold;
+  font-family: 'Kurale', serif;
   font-size: 16px;
   color: #4b2354;
   line-height: 1.2;
@@ -296,7 +307,7 @@ textarea.input100 {
   border-radius: 21px;
 
   font-family: JosefinSans-Bold;
-  font-size: 14px;
+  font-size: 20px;
   color: #fff;
   line-height: 1.2;
   text-transform: uppercase;
