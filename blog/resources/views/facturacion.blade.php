@@ -28,7 +28,7 @@
     @if (session('error'))
         <div class="alert">
             <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-            <strong>Danger!</strong> <span>{{ session('error') }}</span>
+            <strong>¡Error!</strong> <span>{{ session('error') }}</span>
         </div>
     @endif
     <br>

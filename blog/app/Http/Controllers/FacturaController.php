@@ -74,8 +74,7 @@ class FacturaController extends Controller
             }
         }
         catch (\Illuminate\Database\QueryException $exception) {
-            return back()->withError($exception->getMessage())->withInput();
-
+            return back()->withError('    El NIT ' . $request->input('clienteNIT'). ' no es válido. ')->withInput();
         }
 
 
