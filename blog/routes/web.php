@@ -36,6 +36,7 @@ Route::resource('atributo', 'AtributoController');
 Route::resource('cliente', 'ClienteController');
 
 Route::get('/fill', function() {
+    exec('composer dump-autoload');
     Artisan::call('db:seed');
 });
 
