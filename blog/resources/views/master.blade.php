@@ -61,6 +61,78 @@
                 border-radius: 100px;
             }
 
+            body {
+            font-family: 'lato', sans-serif;
+        }
+      
+
+        h2 {
+            font-size: 26px;
+            margin: 20px 0;
+            text-align: center;
+            small {
+                font-size: 0.5em;
+            }
+        }
+
+        
+        .table-header {
+            background-color: #95A5A6;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+        .table-row {
+            background-color: #ffffff;
+            box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.1);
+        }
+        .col-1 {
+            width: 100%; 
+            flex-basis: 10%;
+        }
+        .col-2 {
+            width: 100%; 
+            flex-basis: 40%;
+        }
+        .col-3 {
+            width: 100%; 
+            flex-basis: 25%;
+        }
+        .col-4 {
+            width: 100%; 
+            flex-basis: 25%;
+        }
+        
+            
+        @media all and (max-width: 767px) {
+            .table-header {
+            display: none;
+            }
+            .table-row{
+            
+            }
+            li {
+            display: block;
+            }
+            .col {
+            
+            flex-basis: 100%;
+            
+            }
+            .col {
+            display: flex;
+            padding: 10px 0;
+            &:before {
+                color: #6C7A89;
+                padding-right: 10px;
+                content: attr(data-label);
+                flex-basis: 50%;
+                text-align: right;
+            }
+            }
+            }
+            
+
            
         </style>
         <!--                Javascript                  -->
@@ -94,14 +166,16 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="/configTienda">Configurar tienda</a></li>
+                        <li class="active"><a href="/configurarTienda">Configurar tienda</a></li>
                         <li><a href="/cliente">Agregar clientes</a></li>
+                        <li><a href="/verClientes">Ver clientes</a></li>
                         <li><a href="/producto">Ingresar producto</a></li>
-                        <li><a href="/">Facturar</a></li>
-                        <li><a href="/fill">Simular dia de ventas</a></li>
+                        <li><a href="/factura">Ver productos</a></li>
+                        <li><a href="/factura">Facturar</a></li>
+                        <li><a href="/fill">Simular ventass</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="get_free_btn"><a href="https://github.com/her17138/Proyecto2DB/tree/Lulu">Github</a></li>
+                        <li class="get_free_btn btn-xs"><a href="https://github.com/her17138/Proyecto2DB/tree/Lulu">Github</a></li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </nav>

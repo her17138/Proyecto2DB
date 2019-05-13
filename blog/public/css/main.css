@@ -64,6 +64,9 @@ body, html {
 .content, .container {
   text-align: center;
   background-color: rgba(255,255,255,0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .title {
   font-size: 84px;
@@ -154,7 +157,22 @@ iframe {
 }
 
 
-
+.tablitas{
+  width: 100%;  
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  position: center;
+  z-index: 1;
+}
 
 
 
@@ -178,10 +196,12 @@ iframe {
   z-index: 1;
 }
 
-
+.tablitas{
+  
+}
 .wrap-contact100 {
   font-family: 'Nunito', serif;
-  width: 800px;
+  width: 900px;
   background-color: rgba(255,255,255,0.7);
   border-radius: 10px;
   overflow: hidden;

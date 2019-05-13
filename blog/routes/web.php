@@ -34,6 +34,7 @@ Route::resource('cliente', 'ClienteController');
 Route::resource('atributo', 'AtributoController');
 
 Route::resource('cliente', 'ClienteController');
+Route::get('verClientes', 'ClienteController@cliente');
 
 Route::get('/fill', function() {
     Artisan::call('db:seed');
