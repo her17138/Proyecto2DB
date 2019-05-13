@@ -170,7 +170,7 @@
                         <li><a href="/cliente">Agregar clientes</a></li>
                         <li><a href="/verClientes">Ver clientes</a></li>
                         <li><a href="/producto">Ingresar producto</a></li>
-                        <li><a href="/factura">Ver productos</a></li>
+                        <li><a href="/verProducto">Ver productos</a></li>
                         <li><a href="/factura">Facturar</a></li>
                         <li><a href="/fill">Simular ventass</a></li>
                     </ul>

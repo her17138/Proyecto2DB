@@ -37,6 +37,13 @@ class ProductoController extends Controller
         //
     }
 
+    public function producto(){
+        $productos = Producto::All();
+        $categorias = Categoria::All();
+        $marcas = Marca::All();
+        return view('verProducto', compact('productos','categorias','marcas'));
+    }
+
     /**
      * Store a newly created resource in storage.
      *
