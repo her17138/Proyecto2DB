@@ -40,8 +40,65 @@ $factory->define(App\Factura::class, function(Faker $faker) {
 
     $client = App\Cliente::all()->pluck('clienteNIT')->toArray();
     return [
+    'fecha' => $faker->date($format = 'Y-m-d'),
     'clienteNIT' => $faker->randomElement($client),
     'direccion' => $faker -> streetAddress(),
     'total' => $faker -> randomNumber(3),
+    ];
+});
+
+$factory->define(App\Producto::class, function(Faker $faker) {
+    return [
+    'Nombre' => $faker->randomElement($array = array ('Like a Rolling Stone','Satisfaction','Imagine',"What's Going On",'Respect','Good Vibrations',
+    'Johnny B. Goode','Hey Jude','Smells Like Teen Spirit',"What'd I Say (Parts 1 And 2)",'	My Generation','A Change Is Gonna Come','Yesterday',
+    "Blowin' in the Wind",'London Calling','I Want to Hold Your Hand','Purple Haze','Maybellene','Hound Dog','Let It Be','Born to Run','Be My Baby',
+    'In My Life','People Get Ready','God Only Knows','A Day in the Life','Layla',"(Sittin' On) the Dock of the Bay",'Help!','I Walk the Line',
+    'Stairway to Heaven','Sympathy for the Devil','River Deep - Mountain High',"You've Lost That Lovin' Feelin'",'Light My Fire','One',
+    'No Woman No Cry','Gimme Shelter',"That'll Be the Day",'Dancing in the Street','The Weight','Waterloo Sunset','Tutti-Frutti','Georgia on My Mind',
+    'Heartbreak Hotel','Heroes','Bridge Over Troubled Water','All Along the Watchtower','Hotel California','Tracks of My Tears','The Message',
+    'When Doves Cry','Anarchy in the U.K.','When a Man Loves a Woman','Louie Louie','Long Tall Sally','A Whiter Shade of Pale','Billie Jean',
+    "The Times They Are A-Changin'","Let's Stay Together","Whole Lotta Shakin' Going On",'Bo Diddley',"For What It's Worth (Stop, Hey What's That Sound)",
+    'She Loves You','Sunshine of Your Love','Redemption Song','Jailhouse Rock','Tangled Up in Blue','Crying','Walk on By','California Girls',"Papa's Got a Brand New Bag Part 1",
+    'Summertime Blues','Superstition','Whole Lotta Love')),
+    
+    ];
+});
+
+
+$factory->define(App\Categoria::class, function(Faker $faker) {
+
+    $prodId = App\Producto::all()->pluck('productoid')->toArray();
+    return [
+        
+        'Nombre' => $faker->randomElement($array = array('Rock', 'Pop', 'Metal', 'Classical', 'Reggae', 'Disco', 'Electronic')),
+        'productoid' => $faker->randomElement($prodId),
+    ];
+});
+
+
+$factory->define(App\Marca::class, function(Faker $faker) {
+
+    $prodId = App\Producto::all()->pluck('productoid')->toArray();
+    $catId = App\Marca::all()->pluck('categoriaid')->toArray();
+    return [
+        'categoriaid' => $faker->randomElement($catId),
+        'productoid' => $faker->randomElement($prodId),
+        'nombre' => $faker->company(),
+        'precio' => $faker->randomFloat(2,1,15),
+        'cantidad' => $faker->numberBetween(10,100),
+    ];
+});
+
+$factory->define(App\LineaFactura::class, function(Faker $faker) {
+
+    $prodId = App\Producto::all()->pluck('productoid')->toArray();
+    $marcaId = App\Marca::all()->pluck('marcaid')->toArray();
+    $facturaId = App\Factura::all()->pluck('facturaid')->toArray();
+    return [
+        'productoid' => $faker->randomElement($prodId),
+        'marcaid' => $faker->randomElement($marcaId),
+        'facturaid' => $faker->randomElement($facturaId),
+        'cantidad' => $faker->randomNumber(2),
+        'preciounitario' => $faker ->randomFloat($nbMaxDecimals = NULL, $min = 1, $max = 20),
     ];
 });

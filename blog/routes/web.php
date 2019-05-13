@@ -38,6 +38,7 @@ Route::get('verClientes', 'ClienteController@cliente');
 Route::get('verProducto', 'ProductoController@producto');
 
 Route::get('/fill', function() {
+    exec('composer dump-autoload');
     Artisan::call('db:seed');
 });
 
