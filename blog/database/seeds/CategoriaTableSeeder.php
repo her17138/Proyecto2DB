@@ -11,7 +11,7 @@ class CategoriaTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Categoria::class, 50)->create()->each(function($cat){
+        factory(App\Categoria::class, 60)->create()->each(function($cat){
             $cat->save();
             });
     }
