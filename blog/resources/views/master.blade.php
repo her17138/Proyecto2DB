@@ -172,7 +172,8 @@
                         <li><a href="/producto">Ingresar producto</a></li>
                         <li><a href="/verProducto">Ver productos</a></li>
                         <li><a href="/factura">Facturar</a></li>
-                        <li><a href="/fill">Simular ventass</a></li>
+                        <li><a href="/factura">Ver facturas</a></li>
+                        <li><a href="/fill">Simular ventas</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li class="get_free_btn btn-xs"><a href="https://github.com/her17138/Proyecto2DB/tree/Lulu">Github</a></li>
