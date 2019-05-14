@@ -7,6 +7,7 @@ use App\Factura;
 use App\LineaFactura;
 use App\Marca;
 use App\Producto;
+use DB;
 
 class FacturaController extends Controller
 {
@@ -22,6 +23,12 @@ class FacturaController extends Controller
         $productos = Producto::all();
         $idfactura = count(Factura::all()) +1;
         return view('facturacion', compact('marcas', 'facturas', 'productos', 'idfactura'));
+    }
+
+    public function index_through(){
+        $lista_facturas = DB::table('facturas')->orderBy('facturaid')->groupBy('facturaid')->get();
+        //echo $lista_facturas;
+        return view('verLineaFactura')->with('lista_facturas', $lista_facturas);
     }
 
     /**
@@ -91,6 +98,31 @@ class FacturaController extends Controller
     {
         //
     }
+
+    function fetch(Request $request){
+        $select = $request->get('select');
+        $value = $request->get('value');
+        $dependent = $request->get('dependent');
+        $data = DB::table('linea_facturas')->where('facturaid', $value)->get();
+        $output = '<option value="">Seleccione '.ucfirst($dependent).'</option>';
+        foreach($data as $row)
+        {
+           
+            echo $row->lineaid;
+            $output .= '<option value="'.$row->lineaid.'">'.$row->lineaid.'</option>';
+        }
+        echo $output;
+    } 
+
+    function populateTable(Request $request){
+        $facturaid = $request->get('facturaid');
+        $lineaid = $request->get('lineafactura');
+
+        $data = DB::table('linea_facturas')->where('facturaid', $facturaid)->where('lineaid',$lineaid)->get();
+        return response()->json($data);
+
+    }
+
 
     /**
      * Show the form for editing the specified resource.
