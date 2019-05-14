@@ -11,7 +11,7 @@ class MarcaTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Marca::class, 25)->create()->each(function($marca){
+        factory(App\Marca::class, 60)->create()->each(function($marca){
             $marca->save();
             });
     }
