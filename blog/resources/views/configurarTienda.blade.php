@@ -4,13 +4,28 @@
 <form method="post" action="{{ route('atributo.store') }}">
 @csrf
 <h1 style="color:rgb(37,40,80);font-size: 50px;"><b> Datos personalizados </b></h1>
-        <br>
+    <br>
+    <br>
+   <div class="form-group">
+        
+        <div class="row">
+            <div class="col">
+                <label for="Cat1" style="font-size: 20px;">Categoria 1</label>
+                <input type="text" class="form-control" name="cat1" placeholder="Nombre"/>
+            </div>
+            <div class="col">
+                <label for="Cat2"  style="font-size: 20px;">Categoria 2</label>
+                <input type="text" class="form-control" name="cat2" placeholder="Nombre"/>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <span style="color:rgb(37,40,80);font-size: 25px;text-decoration: underline;">Datos</span>
     <table id="datosCustom" class=" table order-list">
         <thead>
             <tr>
                 <td style="text-align:center;font-size: 20px;">Nombre</td>
-                <td style="text-align:center;font-size: 20px;">Tipo</td>
-                <td style="text-align:center;font-size: 20px;">¿Requerido?</td>
+                
             </tr>
         </thead>
         <tbody>

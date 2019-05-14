@@ -11,9 +11,6 @@ $(document).ready(function () {
         var cols = "";
 
         cols += '<td class="col-sm-4"> <input type="text" name="nombre' + counter +'" class="form-control" /> </td>';
-        cols += '<td class="col-sm-4"> <select name="datatype' + counter +'">  <option value="int">Números enteros</option> <option value="float">Números reales</option> <option value="string">Texto</option></select></td>';
-        cols += '<td  style="text-align:center" class="col-sm-4" ><input type="checkbox" name="required' + counter +'" checked></td>';
-
         cols += '<td><input type="button" class="ibtnDel btn btn-md btn-danger "  value="Borrar"></td>';
         newRow.append(cols);
         $("table.order-list").append(newRow);
@@ -29,16 +26,12 @@ $(document).ready(function () {
         var marArray = JSON.parse(marcas); // convertir el json que viene a un array
         var prodArray = JSON.parse(productos);
         
-        cols += '<td style="text-align:center" class="col-sm-3"> \
-                    <select name="producto' + counter +'">';
-        prodArray.forEach(function(producto){
-            cols +='\<option value="'+producto["productoid"]+'">' +producto["Nombre"]+ '</option>';
-        });
+        
         cols +='</select></td>';
-        cols += '<td style="text-align:center" class="col-sm-3"> \
+        cols += '<td style="text-align:center" class="col-sm-6"> \
                     <select name="marca' + counter +'">';
         marArray.forEach(function(marca){
-            cols +='\<option value="'+marca["marcaid"]+'">' +marca["nombre"]+ '</option>';
+            cols +='\<option value="'+marca["marcaid"]+'">' +marca["nombre"].concat(' ').concat(marca["valor"])+ '</option>';
         });
         cols +='</select></td>';
         cols += '<td style="text-align:center" class="col-sm-3"> <input type="number" name="cantidad' + counter +'" class="form-control" /> </td>';

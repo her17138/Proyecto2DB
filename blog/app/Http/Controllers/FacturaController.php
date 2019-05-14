@@ -7,6 +7,7 @@ use App\Factura;
 use App\LineaFactura;
 use App\Marca;
 use App\Producto;
+use DB;
 
 class FacturaController extends Controller
 {
@@ -17,13 +18,20 @@ class FacturaController extends Controller
      */
     public function index()
     {
-        $marcas = Marca::all();
-        $facturas = Factura::all();
-        $productos = Producto::all();
-        $idfactura = count(Factura::all()) +1;
-        return view('facturacion', compact('marcas', 'facturas', 'productos', 'idfactura'));
+        $marcas = Marca::All();
+        $facturas = Factura::All();
+        $productos = Producto::All();
+
+        $atributos = DB::table('marcas')
+                        ->join('valors', 'marcas.productoid', '=', 'valors.productoid')
+                        ->distinct('marcas.marcaid', 'marcas.nombre', 'valors.valor')
+                        ->get();
+    
+        $idfactura = count(Factura::All()) +1;
+        return view('facturacion', compact('atributos', 'facturas', 'productos', 'idfactura'));
     }
 
+    
     /**
      * Show the form for creating a new resource.
      *
@@ -42,7 +50,7 @@ class FacturaController extends Controller
      */
     public function store(Request $request)
     {
-        try{
+        //try{
             //print_r($request -> all());
             $input = $request -> all();
             $idfac = count(Factura::all()) +1; //id de factura
@@ -50,9 +58,10 @@ class FacturaController extends Controller
             $length = (int)((count($input) -3 )/3); // lineas de factura ingresada
             
             $suma =0;
+
             //loop para obtener el precio total 
-            for($i=0; $i <= $length; $i++) {
-                $suma += $request -> input("precio".$i);
+            for($i=0; $i < $length; $i++) {
+                $suma += $request -> input("precio".$i) * $request -> input("cantidad".$i);
             }
             $factura = new Factura;
             $factura -> clienteNIT = $request -> input("clienteNIT");
@@ -61,22 +70,24 @@ class FacturaController extends Controller
             $factura -> saveOrFail();
             
             //loop para las lineas de la factura
-            for($i=0; $i <= $length; $i++) {
+            for($i=0; $i < $length; $i++) {
                 $il = new LineaFactura;
-                $il -> productoid = $request -> input("producto".$i);
+                $productoid = DB::table('marcas')->select('productoid')->where('productoid', $request->input("marca".$i))->first();
+                $il -> productoid = $productoid->productoid;
                 $il -> marcaid = $request -> input("marca".$i);
                 $il -> facturaid = $idfac;
                 $il -> cantidad = $request -> input("cantidad".$i);
                 $il -> preciounitario = $request -> input("precio".$i);
-                if(!is_null($request -> input("producto".$i))){
-                    $il->save();
-                }
+                $il->save();
+                
             }
+        /*
         }
         catch (\Illuminate\Database\QueryException $exception) {
             return back()->withError($exception->getMessage())->withInput();
 
         }
+        */
 
 
     }

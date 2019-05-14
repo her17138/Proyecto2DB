@@ -37,6 +37,12 @@
             </div>
         </div>
     </div>
+    @if (session('error'))
+        <div class="alert">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+            <strong>Danger!</strong> <span>{{ session('error') }}</span>
+        </div>
+    @endif
     <div class="container-contact100-form-btn">
         <button class="contact100-form-btn btn-block" href="/home">
             Siguiente

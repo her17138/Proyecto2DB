@@ -62,9 +62,12 @@
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="/configurarTienda">Configurar tienda</a></li>
                         <li><a href="/cliente">Agregar clientes</a></li>
+                        <li><a href="/verClientes">Ver clientes</a></li>
                         <li><a href="/producto">Ingresar producto</a></li>
+                        <li><a href="/verProducto">Ver productos</a></li>
                         <li><a href="/factura">Facturar</a></li>
-                        <li><a href="/fill">Simular dia de ventas</a></li>
+                        <li><a href="/factura">Ver facturas</a></li>
+                        <li><a href="/fill">Simular ventas</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li class="get_free_btn"><a href="https://github.com/her17138/Proyecto2DB/tree/Lulu">Github</a></li>

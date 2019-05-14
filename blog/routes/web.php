@@ -42,3 +42,4 @@ Route::get('/fill', function() {
     Artisan::call('db:seed');
 });
 
+
