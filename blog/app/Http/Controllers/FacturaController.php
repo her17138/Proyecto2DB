@@ -55,7 +55,7 @@ class FacturaController extends Controller
      */
     public function store(Request $request)
     {
-        //try{
+        try{
             //print_r($request -> all());
             $input = $request -> all();
             $idfac = count(Factura::all()) +1; //id de factura
@@ -72,27 +72,36 @@ class FacturaController extends Controller
             $factura -> clienteNIT = $request -> input("clienteNIT");
             $factura -> total = $suma;
             $factura -> direccion = $request -> input("direccion");
-            $factura -> saveOrFail();
+            $factura -> saveorFail();
             
             //loop para las lineas de la factura
             for($i=0; $i < $length; $i++) {
                 $il = new LineaFactura;
+                $prueba = Marca::find($request -> input("marca".$i));
+                $nCant = $prueba->cantidad - $request -> input("cantidad".$i);
+                $prueba->cantidad = $nCant;
+                if($nCant <= 0){
+                    $message = "Ya no tiene existencias suficientes";
+                    return view('/error', compact('message'));
+                } else {
+                    $prueba->save();
+                }
+                
                 $productoid = DB::table('marcas')->select('productoid')->where('productoid', $request->input("marca".$i))->first();
                 $il -> productoid = $productoid->productoid;
                 $il -> marcaid = $request -> input("marca".$i);
                 $il -> facturaid = $idfac;
-                $il -> cantidad = $request -> input("cantidad".$i);
+                $il -> cantidad = $nCant;
                 $il -> preciounitario = $request -> input("precio".$i);
-                $il->save();
+                                
                 
             }
-        /*
-        }
-        catch (\Illuminate\Database\QueryException $exception) {
+        }catch (\Illuminate\Database\QueryException $exception) {
             return back()->withError($exception->getMessage())->withInput();
-
         }
-        */
+        
+       
+        
 
 
     }

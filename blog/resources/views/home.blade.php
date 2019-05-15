@@ -66,7 +66,7 @@
                         <li><a href="/producto">Ingresar producto</a></li>
                         <li><a href="/verProducto">Ver productos</a></li>
                         <li><a href="/factura">Facturar</a></li>
-                        <li><a href="/factura">Ver facturas</a></li>
+                        <li><a href="/verFactura">Ver facturas</a></li>
                         <li><a href="/fill">Simular ventas</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">

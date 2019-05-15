@@ -49,8 +49,6 @@ class AtributoController extends Controller
         for($i=0; $i <= (int)((count($input) - 1)/3); $i++) {
             $attrb = new Atributo;
             $attrb -> nombre = $request -> input("nombre".$i);
-            $attrb -> datatype = $request -> input("datatype".$i);
-            $attrb -> required = $request -> input("required".$i);
             if(!is_null($request -> input("nombre".$i))){
                 $attrb->save();
             }

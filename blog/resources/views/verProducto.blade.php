@@ -19,11 +19,11 @@
                 @for ($i=0; $i<count($productos); $i++)
                 
                         <tr>
-                        <td>{{$productos[$i]->Nombre}}</td>
-                        <td>{{$marcas[$i] -> nombre}}</td>
-                        <td>{{$marcas[$i]->categoriaid}}</td>
-                        <td>{{$marcas[$i]->precio}}</td>
-                        <td>{{$marcas[$i]->cantidad}}</td>
+                        <td>{{$productos[$i]->nombre}}</td>
+                        <td>{{$productos[$i] -> marca}}</td>
+                        <td>{{$productos[$i]-> categoria}}</td>
+                        <td>{{$productos[$i]-> precio}}</td>
+                        <td>{{$productos[$i]->cantidad}}</td>
                         </tr>
                 
                 @endfor

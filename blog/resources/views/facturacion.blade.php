@@ -23,6 +23,13 @@
     </div>
     <br>
 
+    @if (session('error'))
+        <div class="alert">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+            <strong>Danger!</strong> <span>El nit del cliente no existe</span>
+        </div>
+    @endif
+
     <br>
     <div class="form-group">
         <label for="direccion">Dirección</label>

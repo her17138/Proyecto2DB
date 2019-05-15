@@ -6,6 +6,7 @@ use App\Categoria;
 use App\Marca;
 use App\Atributo;
 use App\Valor;
+use DB;
 
 
 use Illuminate\Http\Request;
@@ -38,10 +39,12 @@ class ProductoController extends Controller
     }
 
     public function producto(){
-        $productos = Producto::All();
-        $categorias = Categoria::All();
-        $marcas = Marca::All();
-        return view('verProducto', compact('productos','categorias','marcas'));
+        $productos = DB::table('marcas')
+                    ->join('productos', 'productos.productoid', '=', 'marcas.productoid')
+                    ->join('categorias', 'categorias.categoriaid', '=', 'marcas.categoriaid')
+                    ->select('productos.Nombre AS nombre', 'marcas.nombre AS marca', 'categorias.Nombre AS categoria', 'marcas.precio AS precio', 'marcas.cantidad AS cantidad')
+                    ->get();
+        return view('verProducto', compact('productos'));
     }
 
     /**
@@ -60,7 +63,13 @@ class ProductoController extends Controller
             $producto->save();
             $producto2->save();
 
-
+            $categorias = Categoria::All();
+            foreach ($categorias as $categoria){
+                $prueba = Categoria::find($categoria->categoriaid);
+                $prueba->Nombre = $categoria->Nombre;
+                $prueba->productoid = $producto->productoid;
+                $prueba->save();
+            }
             $marca = new Marca;
             $marca -> nombre = $request -> input("nombre1");
             $marca -> precio = $request -> input("precio1");
@@ -79,6 +88,8 @@ class ProductoController extends Controller
             $marca2 -> productoid = $producto2->productoid;
             $marca2 -> categoriaid = $request -> input("inputState2");
             $marca2->save();
+
+            
         
             $atributos = Atributo::all();
             $categorias = Categoria::all();

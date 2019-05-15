@@ -45,3 +45,4 @@ Route::get('/fill', function() {
 Route::get('/verFactura', 'FacturaController@index_through');
 Route::post('verFactura/fetch', 'FacturaController@fetch')->name('FacturaController.fetch');
 Route::post('verFactura/populateTable', 'FacturaController@populateTable')->name('FacturaController.populateTable');
+Route::post('/error', 'FacturaController@store');
