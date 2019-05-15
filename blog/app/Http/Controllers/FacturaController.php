@@ -72,7 +72,7 @@ class FacturaController extends Controller
             $factura -> clienteNIT = $request -> input("clienteNIT");
             $factura -> total = $suma;
             $factura -> direccion = $request -> input("direccion");
-            $factura -> saveorFail();
+            
             
             //loop para las lineas de la factura
             for($i=0; $i < $length; $i++) {
@@ -85,20 +85,24 @@ class FacturaController extends Controller
                     return view('/error', compact('message'));
                 } else {
                     $prueba->save();
+                    $factura -> saveorFail();
                 }
                 
                 $productoid = DB::table('marcas')->select('productoid')->where('productoid', $request->input("marca".$i))->first();
                 $il -> productoid = $productoid->productoid;
                 $il -> marcaid = $request -> input("marca".$i);
-                $il -> facturaid = $idfac;
+                $il -> facturaid = $factura->facturaid;
                 $il -> cantidad = $nCant;
                 $il -> preciounitario = $request -> input("precio".$i);
+                $il->save();
                                 
                 
             }
+        
         }catch (\Illuminate\Database\QueryException $exception) {
             return back()->withError($exception->getMessage())->withInput();
         }
+        
         
        
         
