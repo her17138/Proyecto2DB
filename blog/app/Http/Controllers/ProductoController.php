@@ -70,6 +70,8 @@ class ProductoController extends Controller
                 $prueba->productoid = $producto->productoid;
                 $prueba->save();
             }
+
+            
             $marca = new Marca;
             $marca -> nombre = $request -> input("nombre1");
             $marca -> precio = $request -> input("precio1");
@@ -92,11 +94,13 @@ class ProductoController extends Controller
             
         
             $atributos = Atributo::all();
-            $categorias = Categoria::all();
+
+           
 
             foreach ($atributos as $atributo){
+                $cambio = Atributo::find($atributo->atributoid);
+                $cambio->productoid = $producto->productoid;
                 $val = $atributo->atributoid;
-
                 $val2 = $atributo->nombre;
 
                 $valor = new Valor;

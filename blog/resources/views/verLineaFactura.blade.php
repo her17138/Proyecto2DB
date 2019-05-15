@@ -2,9 +2,10 @@
   
 
 @section('body')
-  <br />
-  <div class="container box">
-   <h3 align="center">Facturas en sistema</h3><br />
+ 
+ 
+   <h1 style="color:rgb(37,40,80);font-size: 50px;"><b> Facturas en sistema </b></h1>
+   <br>
    <div class="form-group">
     <select name="idFactura" id="idFactura" class="form-control input-lg dynamic" data-dependent="lineaFacturaId">
      <option value="">Seleccione un ID de factura</option>
@@ -33,7 +34,7 @@
    {{ csrf_field() }}
    <br />
    <br />
-  </div>
+
  
 
 @endsection
