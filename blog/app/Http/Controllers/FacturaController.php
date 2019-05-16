@@ -27,7 +27,7 @@ class FacturaController extends Controller
                         ->get();
     
         $idfactura = count(Factura::All()) +1;
-        return view('facturacion', compact('atributos', 'facturas', 'productos', 'idfactura'));
+        return view('facturacion', compact('atributos', 'facturas', 'productos', 'idfactura','marcas'));
     }
 
     public function index_through(){
