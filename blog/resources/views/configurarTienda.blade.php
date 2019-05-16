@@ -6,17 +6,15 @@
 <h1 style="color:rgb(37,40,80);font-size: 50px;"><b> Datos personalizados </b></h1>
     <br>
     <hr>
-    <span style="color:rgb(37,40,80);font-size: 25px;text-decoration: underline;">Datos</span>
-    <table id="datosCustom" class=" table order-list">
+    <table id="datosCustom" class=" table order-list" >
         <thead>
             <tr>
-                <td style="text-align:center;font-size: 20px;">Nombre</td>
-                
+                <td style="text-align:center; font-size: 20px; text-decoration: underline;">Nombre de datos</td>
             </tr>
         </thead>
         <tbody>
             <tr >
-                <td class="col-sm-4">
+                <td class="col-sm">
                     <input type="text" name="nombre0" class="form-control" />
                 </td>
                 
@@ -26,7 +24,7 @@
         </tbody>
         <tfoot>
             <tr>
-                <td colspan="5" style="text-align: left;">
+                <td colspan="5" style="text-align: center;">
                     <input type="button" class="btn btn-info btn-lg btn-block" style="border-radius:100px" id="addrow" value="+" />
                 </td>
             </tr>

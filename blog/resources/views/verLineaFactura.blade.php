@@ -6,7 +6,6 @@
    <h1 style="color:rgb(37,40,80);font-size: 50px;"><b> Facturas en sistema </b></h1>
    <br>
    <br>
-   <br>
    <div class="form-group">
     <select name="idFactura" id="idFactura" class="form-control input-lg dynamic" data-dependent="lineaFacturaId">
      <option value="">Seleccione un ID de factura</option>
@@ -26,6 +25,7 @@
             <th style="text-align:center;">Precio Unitario</th>
         </tr>
         <tbody>
+   <br>
    <br>
    {{ csrf_field() }}
 

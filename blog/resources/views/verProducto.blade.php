@@ -8,11 +8,11 @@
             
                 <thead>
                 <tr>
-                <th >Producto</th>
-                <th >Marca</th>
+                <th  style="text-align:center;">Producto</th>
+                <th  style="text-align:center;">Marca</th>
               
-                <th >Precio</th>
-                <th >Cantidad</th>
+                <th  style="text-align:center;">Precio</th>
+                <th  style="text-align:center;">Cantidad</th>
                 </tr>
                 </thead>
                 <tbody>
