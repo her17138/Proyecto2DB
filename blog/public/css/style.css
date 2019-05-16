@@ -334,6 +334,8 @@ iframe {
   padding-bottom: 35px;
 }
 
+.navbar-nav > li > .dropdown-menu { background-color: #121921; }
+.innerLink  {text-align: center;}
 .server_title p {
   font-size: 14px;
   line-height: 24px;

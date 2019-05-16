@@ -25,6 +25,21 @@ class CreateFacturasTable extends Migration
             ->references('clienteNIT')
             ->on('clientes');
         });
+
+        //procedure.. de offset
+
+        DB::unprepared(
+            "CREATE OR REPLACE PROCEDURE offsetDays(mult int)
+            LANGUAGE plpgsql    
+            AS $$
+            BEGIN
+                UPDATE facturas
+                SET created_at= created_at + mult * INTERVAL '1 day'; 
+             
+                COMMIT;
+            END;
+            $$;"
+        );
     }
 
     /**

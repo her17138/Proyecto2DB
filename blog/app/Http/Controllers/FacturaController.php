@@ -8,6 +8,8 @@ use App\LineaFactura;
 use App\Marca;
 use App\Producto;
 use DB;
+use Artisan;
+
 
 class FacturaController extends Controller
 {
@@ -142,6 +144,14 @@ class FacturaController extends Controller
         $data = DB::table('linea_facturas')->where('facturaid', $facturaid)->where('lineaid',$lineaid)->get();
         return response()->json($data);
 
+    }
+
+    function migrate(Request $request){
+        exec('composer dump-autoload');
+        Artisan::call('db:seed' ,['--force' => true]);
+        $fecha = $request->get('cantidadDias');
+        //llamamos stored procedure..
+        DB::select('call offsetDays(?)', array($fecha));
     }
 
 

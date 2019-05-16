@@ -37,10 +37,7 @@ Route::resource('cliente', 'ClienteController');
 Route::get('verClientes', 'ClienteController@cliente');
 Route::get('verProducto', 'ProductoController@producto');
 
-Route::get('/fill', function() {
-    exec('composer dump-autoload');
-    Artisan::call('db:seed' ,['--force' => true]);
-});
+Route::post('/fill','FacturaController@migrate')->name('FacturaController.migrate');
 
 Route::get('/verFactura', 'FacturaController@index_through');
 Route::post('verFactura/fetch', 'FacturaController@fetch')->name('FacturaController.fetch');

@@ -174,7 +174,18 @@
                         <li><a href="/verProducto">Ver productos</a></li>
                         <li><a href="/factura">Facturar</a></li>
                         <li><a href="/verFactura">Ver facturas</a></li>
-                        <li><a href="/fill">Simular ventas</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Simular ventas
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            
+                                <input type="text" id="dias" placeholder='Numero de dias a simular'>
+                                <button class='innerLink' id='trigger_link'>Simular</button>
+                                {{ csrf_field() }}
+
+                            </div>
+                        </li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li class="get_free_btn btn-xs"><a href="https://github.com/her17138/Proyecto2DB/tree/Lulu">Github</a></li>
@@ -192,7 +203,32 @@
             
         </div>
     </body>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#trigger_link").click(function(){
+                //alert($('#dias').val());
+                //TODO: AXIOS REQUEST..
 
+                var quantity = $('#dias').val();
+                var _token = $('input[name="_token"]').val();
+                //alert(quantity);
+                quantity=parseInt(quantity);
+                //alert(quantity);
+
+                //ajax...
+                $.ajax({
+                   url: "{{ route('FacturaController.migrate') }}",
+                   method: "POST",
+                   data:{cantidadDias:quantity, _token:_token}
+               }).fail( function(xhr, textStatus, errorThrown) {
+                    alert(xhr.responseText);
+                }).success(function(){
+                    alert('Simulacion finalizada exitosamente');
+                }); 
+
+            });
+        })
+    </script>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery-2.2.4.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
