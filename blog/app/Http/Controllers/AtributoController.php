@@ -42,7 +42,7 @@ class AtributoController extends Controller
         //guardar todos los atributos que vienen del request
 
        
-        for($i=0; $i <= (int)((count($input) - 1)/3); $i++) {
+        for($i=0; $i <= (int)((count($input) - 1)); $i++) {
             $attrb = new Atributo;
             $attrb -> nombre = $request -> input("nombre".$i);
             if(!is_null($request -> input("nombre".$i))){
