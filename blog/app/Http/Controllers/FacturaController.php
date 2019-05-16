@@ -139,7 +139,7 @@ class FacturaController extends Controller
         $facturaid = $request->get('facturaid');
         $lineaid = $request->get('lineafactura');
 
-        $data = DB::table('linea_facturas')->where('facturaid', $facturaid)->where('lineaid',$lineaid)->get();
+        $data = DB::table('linea_facturas')->where('facturaid', $facturaid)->get();
         return response()->json($data);
 
     }
