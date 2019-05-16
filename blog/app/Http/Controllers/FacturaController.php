@@ -29,7 +29,7 @@ class FacturaController extends Controller
                         ->get();
     
         $idfactura = count(Factura::All()) +1;
-        return view('facturacion', compact('atributos', 'facturas', 'productos', 'idfactura'));
+        return view('facturacion', compact('facturas', 'productos','atributos', 'idfactura'));
     }
 
     public function index_through(){
@@ -67,7 +67,8 @@ class FacturaController extends Controller
 
             //loop para obtener el precio total 
             for($i=0; $i < $length; $i++) {
-                $suma += $request -> input("precio".$i) * $request -> input("cantidad".$i);
+                $precio = DB::table('marcas')->select('precio')->where('marcaid', $request->input("marca".$i))->first();
+                $suma += $precio->precio * $request -> input("cantidad".$i);
             }
             $factura = new Factura;
             $factura -> clienteNIT = $request -> input("clienteNIT");
@@ -89,17 +90,20 @@ class FacturaController extends Controller
                     $factura -> saveorFail();
                 }
                 
-                $productoid = DB::table('marcas')->select('productoid')->where('productoid', $request->input("marca".$i))->first();
+                $productoid = DB::table('marcas')->select('productoid')->where('marcaid', $request->input("marca".$i))->first();
+                $precio = DB::table('marcas')->select('precio')->where('marcaid', $request->input("marca".$i))->first();
                 $il -> productoid = $productoid->productoid;
+                
                 $il -> marcaid = $request -> input("marca".$i);
                 $il -> facturaid = $factura->facturaid;
-                $il -> cantidad = $nCant;
-                $il -> preciounitario = $request -> input("precio".$i);
+                $il -> cantidad = $request -> input("cantidad".$i);
+                $il -> preciounitario = $precio->precio;
                 $il->save();
                                 
-                
+                return redirect('/verFactura');
             }
         
+            
         }catch (\Illuminate\Database\QueryException $exception) {
             return back()->withError($exception->getMessage())->withInput();
         }
@@ -141,7 +145,7 @@ class FacturaController extends Controller
         $facturaid = $request->get('facturaid');
         $lineaid = $request->get('lineafactura');
 
-        $data = DB::table('linea_facturas')->where('facturaid', $facturaid)->where('lineaid',$lineaid)->get();
+        $data = DB::table('linea_facturas')->where('facturaid', $facturaid)->get();
         return response()->json($data);
 
     }

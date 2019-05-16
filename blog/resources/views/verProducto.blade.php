@@ -8,11 +8,10 @@
             
                 <thead>
                 <tr>
-                <th >Producto</th>
-                <th >Marca</th>
-              
-                <th >Precio</th>
-                <th >Cantidad</th>
+                <th  style="text-align:center;">Producto</th>
+                <th  style="text-align:center;">Marca</th>
+                <th  style="text-align:center;">Precio</th>
+                <th  style="text-align:center;">Cantidad</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -21,7 +20,6 @@
                         <tr>
                         <td>{{$productos[$i]->nombre}}</td>
                         <td>{{$productos[$i] -> marca}}</td>
-                     
                         <td>{{$productos[$i]-> precio}}</td>
                         <td>{{$productos[$i]->cantidad}}</td>
                         </tr>

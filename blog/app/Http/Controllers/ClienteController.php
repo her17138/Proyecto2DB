@@ -41,14 +41,17 @@ class ClienteController extends Controller
      */
     public function store(Request $request)
     {
+        
         $cliente = new Cliente;
         $cliente -> clienteNIT = $request -> input("nit");
         $cliente -> Nombre = $request -> input("nombre");
         $cliente -> Apellido = $request -> input("apellido");
         $cliente -> Telefono = $request -> input("telefono");
         $cliente -> Direccion = $request -> input("direccion");
-        //$cliente = Cliente::where('clienteNIT', $request->input('nit'))->count(); if($cliente > 0) { echo "There is data"; } else echo "No data";
+        
         $cliente->save();
+        
+        
     }
 
     /**

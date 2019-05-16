@@ -1,9 +1,8 @@
 @extends('master')
 
 @section('body')
-
-<script type="text/javascript">var marcas = '<?= $atributos ?>';</script>
-<script type="text/javascript">var productos = '<?= $productos ?>';</script>
+<script type="text/javascript" >var atributos = `<?= $atributos ?>`;</script>
+<script type="text/javascript">var productos = `<?= $productos ?>`;</script>
 
 
 
@@ -27,7 +26,7 @@
     @if (session('error'))
         <div class="alert">
             <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-            <strong>Danger!</strong> <span>El nit del cliente no existe</span>
+            <strong>¡Error!</strong> <span>El nit del cliente no existe</span>
         </div>
     @endif
     
@@ -43,7 +42,7 @@
             <tr>
                 <td style="text-align:center;">Producto</td>
                 <td style="text-align:center;">Cantidad</td>
-                <td style="text-align:center;">Precio</td>
+                
                 
             </tr>
         </thead>
@@ -59,18 +58,15 @@
                 <td style="text-align:center" class="col-sm-3">
                     <input type="number" name="cantidad0" class="form-control" />
                 </td>
-                <td  style="text-align:center" class="col-sm-3">
-                    <input type="number"  name="precio0" class="form-control" >
-                </td>
+               
                 <td class="col-sm-2"><a class="deleteRow"></a>
                 </td>
             </tr>
-            {{csrf_field()}}
         </tbody>
         <tfoot>
             <tr>
-                <td colspan="5" style="text-align: left;">
-                    <input type="button" class="btn btn-info btn-lg btn-block" style="border-radius:100px" id="addrowF" value="+"/>
+                <td colspan="5" style="text-align: center;">
+                    <input type="button" class="btn btn-info btn-lg btn-block" style="border-radius:100px" id="addrowF" value="+" />
                 </td>
             </tr>
             <tr>
