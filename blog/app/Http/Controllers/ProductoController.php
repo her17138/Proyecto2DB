@@ -135,6 +135,8 @@ class ProductoController extends Controller
                 $valor2->save();
         
             }
+
+            return redirect('/clientes');
         }
         catch (\Illuminate \ Database \ QueryException  $exception){
             return back()->withError($exception->getMessage())->withInput();

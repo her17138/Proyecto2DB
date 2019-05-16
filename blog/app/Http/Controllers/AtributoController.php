@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Atributo;
 use App\Categoria;
+use App\Cliente;
 
 class AtributoController extends Controller
 {
@@ -48,6 +49,8 @@ class AtributoController extends Controller
                 $attrb->save();
             }
         }
+
+     
         return redirect('/producto');
     }
 
