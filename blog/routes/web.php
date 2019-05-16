@@ -39,7 +39,7 @@ Route::get('verProducto', 'ProductoController@producto');
 
 Route::get('/fill', function() {
     exec('composer dump-autoload');
-    Artisan::call('db:seed');
+    Artisan::call('db:seed' ,['--force' => true]);
 });
 
 Route::get('/verFactura', 'FacturaController@index_through');
