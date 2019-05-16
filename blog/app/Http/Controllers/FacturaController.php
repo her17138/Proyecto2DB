@@ -23,8 +23,7 @@ class FacturaController extends Controller
         $productos = Producto::All();
 
         $atributos = DB::table('marcas')
-                        ->join('valors', 'marcas.productoid', '=', 'valors.productoid')
-                        ->distinct('marcas.marcaid', 'marcas.nombre', 'valors.valor')
+                        ->distinct('marcas.marcaid', 'marcas.nombre')
                         ->get();
     
         $idfactura = count(Factura::All()) +1;

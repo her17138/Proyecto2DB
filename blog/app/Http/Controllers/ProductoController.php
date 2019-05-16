@@ -41,13 +41,13 @@ class ProductoController extends Controller
     public function producto(){
         $productos = DB::table('marcas')
                     ->join('productos', 'productos.productoid', '=', 'marcas.productoid')
-                    ->join('categorias', 'categorias.categoriaid', '=', 'marcas.categoriaid')
-                    ->select('productos.Nombre AS nombre', 'marcas.nombre AS marca', 'categorias.Nombre AS categoria', 'marcas.precio AS precio', 'marcas.cantidad AS cantidad')
+                    ->select('productos.Nombre AS nombre', 'marcas.nombre AS marca',  'marcas.precio AS precio', 'marcas.cantidad AS cantidad')
                     ->get();
         return view('verProducto', compact('productos'));
     }
 
     /**
+
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -57,11 +57,20 @@ class ProductoController extends Controller
     {
         try{
             $producto = new Producto;
-            $producto2 = new Producto;
+        
             $producto -> Nombre = $request -> input("nombre");
-            $producto2 -> Nombre = $request -> input("nombre");
+            
             $producto->save();
-            $producto2->save();
+          
+
+            $cat1 = new Categoria;
+            $cat2 = new Categoria;
+            $cat1-> Nombre = $request -> input("cat1");
+            $cat1 -> productoid = $producto->productoid;
+            $cat2-> Nombre = $request -> input("cat2");
+            $cat2 -> productoid = $producto->productoid;
+            $cat1->save();
+            $cat2->save();
 
             $categorias = Categoria::All();
             foreach ($categorias as $categoria){
@@ -77,7 +86,11 @@ class ProductoController extends Controller
             $marca -> precio = $request -> input("precio1");
             $marca -> cantidad = $request -> input("cantidad1");
             $marca -> productoid = $producto->productoid;
-            $marca -> categoriaid = $request -> input("inputState");
+            if ($request -> input("inputState") == $cat1->Nombre){
+                $marca -> categoriaid = $cat1->categoriaid;
+            } elseif ($request -> input("inputState") == $cat2->Nombre){
+                $marca -> categoriaid = $cat2->categoriaid;
+            }
             
             $marca->save();
 
@@ -87,8 +100,12 @@ class ProductoController extends Controller
             $marca2 -> nombre = $request -> input("nombre2");
             $marca2 -> precio = $request -> input("precio2");
             $marca2 -> cantidad = $request -> input("cantidad2");
-            $marca2 -> productoid = $producto2->productoid;
-            $marca2 -> categoriaid = $request -> input("inputState2");
+            $marca2 -> productoid = $producto->productoid;
+            if ($request -> input("inputState2") == $cat1->Nombre){
+                $marca2 -> categoriaid = $cat1->categoriaid;
+            } elseif ($request -> input("inputState2") == $cat2->Nombre){
+                $marca2 -> categoriaid = $cat2->categoriaid;
+            }
             $marca2->save();
 
             
@@ -106,7 +123,7 @@ class ProductoController extends Controller
                 $valor = new Valor;
                 $valor2 = new Valor;
                 $valor -> productoid = $producto->productoid;
-                $valor2 -> productoid = $producto2->productoid;
+                $valor2 -> productoid = $producto->productoid;
                 $valor -> atributoid = $atributo->atributoid;
                 $valor2 -> atributoid = $atributo->atributoid;
 

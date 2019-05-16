@@ -13,6 +13,21 @@
     </div>
     <br>
     <hr>
+    <div class="form-group">
+        <div class="row">
+            <div class="col">
+                <label for="Cat1" style="font-size: 20px;">Categoria 1</label>
+                <input type="text" class="form-control" name="cat1" placeholder="Nombre"/>
+            </div>
+            <div class="col">
+                <label for="Cat2"  style="font-size: 20px;">Categoria 2</label>
+                <input type="text" class="form-control" name="cat2" placeholder="Nombre"/>
+                
+            </div>
+        </div>
+    </div>
+    
+    <hr>
     <div>
         <span style="color:rgb(37,40,80);font-size: 25px;text-decoration: underline;">Marca</span>
     </div>
@@ -23,11 +38,8 @@
         </div>
         <div class="form-group col-md-6">
             <label for="inputState" style="font-size: 20px;">Categoria</label>
-            <select name="inputState" class="form-control">
-                @foreach ($categorias as $categoria)
-                <option value="{{ $categoria-> categoriaid }}">{{ $categoria-> categoriaid }}</option>
-                @endforeach
-            </select>
+            <input type="text" class="form-control" name="inputState" placeholder="Categoria">
+            <label for="Cat2"  style="font-size: 10px;">*Nota: este campo puede estar vacio*</label>
         </div>
     </div>
     <div class="form-row">
@@ -75,11 +87,8 @@
         </div>
         <div class="form-group col-md-6">
             <label for="inputState2" style="font-size: 20px;">Categoria</label>
-            <select name="inputState2" class="form-control">
-                @foreach ($categorias as $categoria)
-                <option value="{{ $categoria-> categoriaid }}">{{ $categoria-> categoriaid }}</option>
-                @endforeach
-            </select>
+            <input type="text" class="form-control" name="inputState2" placeholder="Categoria">
+            <label for="Cat2"  style="font-size: 10px;">*Nota: este campo puede estar vacio*</label>
         </div>
     </div>
     <div class="form-row">

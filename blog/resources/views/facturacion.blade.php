@@ -52,7 +52,7 @@
                 <td style="text-align:center" class="col-sm-6">                    
                     <select name="marca0" class="form-control dynamic" data-dependent="precio0">
                     @foreach ($atributos as $atributo)
-                        <option value="{{ $atributo -> marcaid }}" > {{ $atributo -> nombre.' '.$atributo->valor}} </option>
+                        <option value="{{ $atributo -> marcaid }}" > {{ $atributo -> nombre}} </option>
                     @endforeach
                     </select>
                 </td>

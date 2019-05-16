@@ -10,7 +10,7 @@
                 <tr>
                 <th >Producto</th>
                 <th >Marca</th>
-                <th >Categoria</th>
+              
                 <th >Precio</th>
                 <th >Cantidad</th>
                 </tr>
@@ -21,7 +21,7 @@
                         <tr>
                         <td>{{$productos[$i]->nombre}}</td>
                         <td>{{$productos[$i] -> marca}}</td>
-                        <td>{{$productos[$i]-> categoria}}</td>
+                     
                         <td>{{$productos[$i]-> precio}}</td>
                         <td>{{$productos[$i]->cantidad}}</td>
                         </tr>

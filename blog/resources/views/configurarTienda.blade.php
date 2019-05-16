@@ -5,20 +5,6 @@
 @csrf
 <h1 style="color:rgb(37,40,80);font-size: 50px;"><b> Datos personalizados </b></h1>
     <br>
-    <br>
-   <div class="form-group">
-        
-        <div class="row">
-            <div class="col">
-                <label for="Cat1" style="font-size: 20px;">Categoria 1</label>
-                <input type="text" class="form-control" name="cat1" placeholder="Nombre"/>
-            </div>
-            <div class="col">
-                <label for="Cat2"  style="font-size: 20px;">Categoria 2</label>
-                <input type="text" class="form-control" name="cat2" placeholder="Nombre"/>
-            </div>
-        </div>
-    </div>
     <hr>
     <span style="color:rgb(37,40,80);font-size: 25px;text-decoration: underline;">Datos</span>
     <table id="datosCustom" class=" table order-list">
@@ -33,19 +19,7 @@
                 <td class="col-sm-4">
                     <input type="text" name="nombre0" class="form-control" />
                 </td>
-                <td class="col-sm-4">                    
-                    <select name="datatype0">
-                    <option value="int">Números enteros</option>
-                    <option value="float">Números reales</option>
-                    <option value="string">Texto</option>
-                    </select>
-                </td>
-                <!--td class="col-sm-3"  style="text-align:center">
-                    <input type="checkbox" id="defaultChecked" checked>
-                </td-->
-                <td  style="text-align:center" class="col-sm-4">
-                    <input type="checkbox" name="required0" checked>
-                </td>
+                
                 <td class="col-sm-2"><a class="deleteRow"></a>
                 </td>
             </tr>
