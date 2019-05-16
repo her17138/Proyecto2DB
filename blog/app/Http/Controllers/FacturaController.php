@@ -7,6 +7,7 @@ use App\Factura;
 use App\LineaFactura;
 use App\Marca;
 use App\Producto;
+use DB;
 
 class FacturaController extends Controller
 {
@@ -17,11 +18,22 @@ class FacturaController extends Controller
      */
     public function index()
     {
-        $marcas = Marca::all();
-        $facturas = Factura::all();
-        $productos = Producto::all();
-        $idfactura = count(Factura::all()) +1;
-        return view('facturacion', compact('marcas', 'facturas', 'productos', 'idfactura'));
+        $marcas = Marca::All();
+        $facturas = Factura::All();
+        $productos = Producto::All();
+
+        $atributos = DB::table('marcas')
+                        ->distinct('marcas.marcaid', 'marcas.nombre')
+                        ->get();
+    
+        $idfactura = count(Factura::All()) +1;
+        return view('facturacion', compact('facturas', 'productos','atributos', 'idfactura'));
+    }
+
+    public function index_through(){
+        $lista_facturas = DB::table('facturas')->orderBy('facturaid')->groupBy('facturaid')->get();
+        //echo $lista_facturas;
+        return view('verLineaFactura')->with('lista_facturas', $lista_facturas);
     }
 
     /**
@@ -50,32 +62,50 @@ class FacturaController extends Controller
             $length = (int)((count($input) -3 )/3); // lineas de factura ingresada
             
             $suma =0;
+
             //loop para obtener el precio total 
-            for($i=0; $i <= $length; $i++) {
-                $suma += $request -> input("precio".$i);
+            for($i=0; $i < $length; $i++) {
+                $suma += $request -> input("precio".$i) * $request -> input("cantidad".$i);
             }
             $factura = new Factura;
             $factura -> clienteNIT = $request -> input("clienteNIT");
             $factura -> total = $suma;
             $factura -> direccion = $request -> input("direccion");
-            $factura -> saveOrFail();
+            
             
             //loop para las lineas de la factura
-            for($i=0; $i <= $length; $i++) {
+            for($i=0; $i < $length; $i++) {
                 $il = new LineaFactura;
-                $il -> productoid = $request -> input("producto".$i);
-                $il -> marcaid = $request -> input("marca".$i);
-                $il -> facturaid = $idfac;
-                $il -> cantidad = $request -> input("cantidad".$i);
-                $il -> preciounitario = $request -> input("precio".$i);
-                if(!is_null($request -> input("producto".$i))){
-                    $il->save();
+                $prueba = Marca::find($request -> input("marca".$i));
+                $nCant = $prueba->cantidad - $request -> input("cantidad".$i);
+                $prueba->cantidad = $nCant;
+                if($nCant <= 0){
+                    $message = "Ya no tiene existencias suficientes";
+                    return view('/error', compact('message'));
+                } else {
+                    $prueba->save();
+                    $factura -> saveorFail();
                 }
+                
+                $productoid = DB::table('marcas')->select('productoid')->where('marcaid', $request->input("marca".$i))->first();
+                $il -> productoid = $productoid->productoid;
+                
+                $il -> marcaid = $request -> input("marca".$i);
+                $il -> facturaid = $factura->facturaid;
+                $il -> cantidad = $nCant;
+                $il -> preciounitario = $request -> input("precio".$i);
+                $il->save();
+                                
+                return redirect('/verFactura');
             }
         }
         catch (\Illuminate\Database\QueryException $exception) {
             return back()->withError('    El NIT ' . $request->input('clienteNIT'). ' no es válido. ')->withInput();
         }
+        
+        
+       
+        
 
 
     }
@@ -90,6 +120,31 @@ class FacturaController extends Controller
     {
         //
     }
+
+    function fetch(Request $request){
+        $select = $request->get('select');
+        $value = $request->get('value');
+        $dependent = $request->get('dependent');
+        $data = DB::table('linea_facturas')->where('facturaid', $value)->get();
+        $output = '<option value="">Seleccione '.ucfirst($dependent).'</option>';
+        foreach($data as $row)
+        {
+           
+            echo $row->lineaid;
+            $output .= '<option value="'.$row->lineaid.'">'.$row->lineaid.'</option>';
+        }
+        echo $output;
+    } 
+
+    function populateTable(Request $request){
+        $facturaid = $request->get('facturaid');
+        $lineaid = $request->get('lineafactura');
+
+        $data = DB::table('linea_facturas')->where('facturaid', $facturaid)->get();
+        return response()->json($data);
+
+    }
+
 
     /**
      * Show the form for editing the specified resource.

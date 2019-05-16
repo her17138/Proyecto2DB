@@ -11,7 +11,7 @@ class ClienteTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Cliente::class, 500)->create()->each(function($cliente){
+        factory(App\Cliente::class, 100)->create()->each(function($cliente){
             $cliente->save();
             });
     }

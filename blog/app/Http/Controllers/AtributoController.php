@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Atributo;
+use App\Categoria;
+use App\Cliente;
 
 class AtributoController extends Controller
 {
@@ -39,15 +41,16 @@ class AtributoController extends Controller
         //print_r($input);
         //guardar todos los atributos que vienen del request
 
-        for($i=0; $i <= (int)((count($input) - 1)/3); $i++) {
+       
+        for($i=0; $i <= (int)((count($input) - 1)); $i++) {
             $attrb = new Atributo;
             $attrb -> nombre = $request -> input("nombre".$i);
-            $attrb -> datatype = $request -> input("datatype".$i);
-            $attrb -> required = $request -> input("required".$i);
             if(!is_null($request -> input("nombre".$i))){
                 $attrb->save();
             }
         }
+
+     
         return redirect('/producto');
     }
 

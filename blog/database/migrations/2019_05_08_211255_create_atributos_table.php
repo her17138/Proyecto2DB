@@ -18,8 +18,7 @@ class CreateAtributosTable extends Migration
             //$table->primary('atributoid');
             $table->string('nombre');
             $table->integer('productoid') -> nullable();
-            $table->string('datatype');
-            $table->string('required') -> nullable();
+            
 
             
             $table->foreign('productoid')

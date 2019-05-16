@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class FacturaTableSeeder extends Seeder
+class ProductoTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,8 +11,8 @@ class FacturaTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Factura::class, 100)->create()->each(function($fact){
-            $fact->save();
+        factory(App\Producto::class, 60)->create()->each(function($prod){
+            $prod->save();
             });
     }
 }

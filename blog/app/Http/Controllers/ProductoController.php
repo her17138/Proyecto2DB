@@ -6,6 +6,7 @@ use App\Categoria;
 use App\Marca;
 use App\Atributo;
 use App\Valor;
+use DB;
 
 
 use Illuminate\Http\Request;
@@ -37,7 +38,16 @@ class ProductoController extends Controller
         //
     }
 
+    public function producto(){
+        $productos = DB::table('marcas')
+                    ->join('productos', 'productos.productoid', '=', 'marcas.productoid')
+                    ->select('productos.Nombre AS nombre', 'marcas.nombre AS marca',  'marcas.precio AS precio', 'marcas.cantidad AS cantidad')
+                    ->get();
+        return view('verProducto', compact('productos'));
+    }
+
     /**
+
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -45,57 +55,96 @@ class ProductoController extends Controller
      */
     public function store(Request $request)
     {
-        $producto = new Producto;
-        $producto2 = new Producto;
-        $producto -> Nombre = $request -> input("nombre");
-        $producto2 -> Nombre = $request -> input("nombre");
-        $producto->save();
-        $producto2->save();
-
-
-        $marca = new Marca;
-        $marca -> nombre = $request -> input("nombre1");
-        $marca -> precio = $request -> input("precio1");
-        $marca -> cantidad = $request -> input("cantidad1");
-        $marca -> productoid = $producto->productoid;
-        $marca -> categoriaid = $request -> input("inputState");
+        try{
+            $producto = new Producto;
         
-        $marca->save();
+            $producto -> Nombre = $request -> input("nombre");
+            
+            $producto->save();
+          
 
-        $marca2 = new Marca;
-        $marca2 -> nombre = $request -> input("nombre2");
-        $marca2 -> precio = $request -> input("precio2");
-        $marca2 -> cantidad = $request -> input("cantidad2");
-        $marca2 -> productoid = $producto2->productoid;
-        $marca2 -> categoriaid = $request -> input("inputState2");
-        $marca2->save();
-       
-        $atributos = Atributo::all();
-        $categorias = Categoria::all();
+            $cat1 = new Categoria;
+            $cat2 = new Categoria;
+            $cat1-> Nombre = $request -> input("cat1");
+            $cat1 -> productoid = $producto->productoid;
+            $cat2-> Nombre = $request -> input("cat2");
+            $cat2 -> productoid = $producto->productoid;
+            $cat1->save();
+            $cat2->save();
 
-        foreach ($atributos as $atributo){
-            $val = $atributo->atributoid;
+            $categorias = Categoria::All();
+            foreach ($categorias as $categoria){
+                $prueba = Categoria::find($categoria->categoriaid);
+                $prueba->Nombre = $categoria->Nombre;
+                $prueba->productoid = $producto->productoid;
+                $prueba->save();
+            }
 
-            $val2 = $atributo->nombre;
+            
+            $marca = new Marca;
+            $marca -> nombre = $request -> input("nombre1");
+            $marca -> precio = $request -> input("precio1");
+            $marca -> cantidad = $request -> input("cantidad1");
+            $marca -> productoid = $producto->productoid;
+            if ($request -> input("inputState") == $cat1->Nombre){
+                $marca -> categoriaid = $cat1->categoriaid;
+            } elseif ($request -> input("inputState") == $cat2->Nombre){
+                $marca -> categoriaid = $cat2->categoriaid;
+            }
+            
+            $marca->save();
 
-            $valor = new Valor;
-            $valor2 = new Valor;
-            $valor -> productoid = $producto->productoid;
-            $valor2 -> productoid = $producto2->productoid;
-            $valor -> atributoid = $atributo->atributoid;
-            $valor2 -> atributoid = $atributo->atributoid;
+        
 
-            $valor2 -> valor = $request -> input("$val2");
+            $marca2 = new Marca;
+            $marca2 -> nombre = $request -> input("nombre2");
+            $marca2 -> precio = $request -> input("precio2");
+            $marca2 -> cantidad = $request -> input("cantidad2");
+            $marca2 -> productoid = $producto->productoid;
+            if ($request -> input("inputState2") == $cat1->Nombre){
+                $marca2 -> categoriaid = $cat1->categoriaid;
+            } elseif ($request -> input("inputState2") == $cat2->Nombre){
+                $marca2 -> categoriaid = $cat2->categoriaid;
+            }
+            $marca2->save();
 
-            $valor -> valor = $request -> input("$val");
+            
+        
+            $atributos = Atributo::all();
 
-            $valor->save();
-            $valor2->save();
-       
+           
+
+            foreach ($atributos as $atributo){
+                $cambio = Atributo::find($atributo->atributoid);
+                $cambio->productoid = $producto->productoid;
+                $val = $atributo->atributoid;
+                $val2 = $atributo->nombre;
+
+                $valor = new Valor;
+                $valor2 = new Valor;
+                $valor -> marcaid = $marca->marcaid;
+                $valor2 -> marcaid = $marca2->marcaid;
+                $valor -> atributoid = $atributo->atributoid;
+                $valor2 -> atributoid = $atributo->atributoid;
+
+                $valor2 -> valor = $request -> input("$val2");
+
+                $valor -> valor = $request -> input("$val");
+
+                $valor->save();
+                $valor2->save();
+        
+            }
+
+            return redirect('/clientes');
+        }
+        catch (\Illuminate \ Database \ QueryException  $exception){
+            return back()->withError($exception->getMessage())->withInput();
+
         }
     
         
-        return redirect('/atributos'); // redireccion de vista al terminar de guardarlo
+        
     }
     /**
      * Display the specified resource.
