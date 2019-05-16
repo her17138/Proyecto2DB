@@ -5,34 +5,29 @@
  
    <h1 style="color:rgb(37,40,80);font-size: 50px;"><b> Facturas en sistema </b></h1>
    <br>
+   <br>
    <div class="form-group">
     <select name="idFactura" id="idFactura" class="form-control input-lg dynamic" data-dependent="lineaFacturaId">
      <option value="">Seleccione un ID de factura</option>
      @foreach($lista_facturas as $idFactura)
-     <option value="{{ $idFactura->facturaid }}">{{ $idFactura->facturaid }}</option>
+        <option value="{{ $idFactura->facturaid }}">{{ $idFactura->facturaid }}</option>
      @endforeach
     </select>
    </div>
-   <br />
-   <div class="form-group">
-    <select name="lineaFacturaId" id="lineaFacturaId" class="form-control input-lg dynamic" data-dependent="lineaFacturaId">
-     <option value="">Seleccione la linea de factura</option>
-    </select>
+   
     <table class = 'table table-bordered table-striped' id='factura_table'>
         <tr>
-            <th>ID Linea de factura</th>
-            <th>ID de producto</th>
-            <th>ID de marca</th>
-            <th>ID de factura</th>
-            <th>Cantidad</th>
-            <th>Precio Unitario</th>
+            <th style="text-align:center;">ID Linea de factura</th>
+            <th style="text-align:center;">ID de producto</th>
+            <th style="text-align:center;">ID de marca</th>
+            <th style="text-align:center;">ID de factura</th>
+            <th style="text-align:center;">Cantidad</th>
+            <th style="text-align:center;">Precio Unitario</th>
         </tr>
         <tbody>
-   </div>
-   <br />
+   <br>
+   <br>
    {{ csrf_field() }}
-   <br />
-   <br />
 
    <script type="text/javascript">
 
@@ -45,6 +40,7 @@
         var value2='';
     
         var condicion1 = document.getElementById('idFactura');
+        
             
         function logValue() {
             value1 = this.value;
@@ -52,14 +48,14 @@
         }
     
         var condicion2 = document.getElementById('lineaFacturaId');
-            
+        
         function logValue2() {
             value2 = this.value;
             //alert(value2);   
         }
     
         condicion1.addEventListener('change', logValue, false);
-        condicion2.addEventListener('change', logValue2, false);    
+       // condicion2.addEventListener('change', logValue2, false);    
     
     
         $('.dynamic').change(function(){
@@ -80,8 +76,9 @@
                 
                 })
     
-                if(value1 != '' && value2 != '' ){
+                if(value1 != ''){
                     //alert('value1: '+ value1 + 'value2: ' + value2);
+                    var counter =1;
                     $.ajax({
                         url:"{{ route('FacturaController.populateTable') }}",
                         method:"POST",
@@ -97,14 +94,13 @@
                                 table.deleteRow(i);
                             }
                             $.each(response, function (i, item) {
-                            trHTML += '<tr><td>' + item.lineaid + '</td><td>' + item.productoid + '</td><td>' + item.marcaid + '</td><td>' + item.facturaid + '</td><td>' + item.cantidad + '</td><td>' + item.preciounitario + '</td></tr>';
+                            trHTML += '<tr><td>' + counter + '</td><td>' + item.productoid + '</td><td>' + item.marcaid + '</td><td>' + item.facturaid + '</td><td>' + item.cantidad + '</td><td>' + item.preciounitario + '</td></tr>';
                             //alert(item.lineaid);
+                            counter ++;
                             });
                             
                             $('#factura_table').append(trHTML);
     
-    
-                            //$('#factura_table').remove();
                         }
     
                     })

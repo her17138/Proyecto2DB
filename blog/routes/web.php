@@ -16,6 +16,10 @@ Route::get('/', function () {
 }) -> name ('home');
 
 
+Route::get('/home', function () {
+    return view('home');
+}) -> name ('home');
+
 Route::get('/atributos', function(){
     return view('atributosProducto');
 }) -> name ('atributosProducto');
@@ -37,9 +41,10 @@ Route::resource('cliente', 'ClienteController');
 Route::get('verClientes', 'ClienteController@cliente');
 Route::get('verProducto', 'ProductoController@producto');
 
-Route::get('/fill', function() {
+Route::get('/home', function() {
     exec('composer dump-autoload');
     Artisan::call('db:seed' ,['--force' => true]);
+    return view('home');
 });
 
 Route::get('/verFactura', 'FacturaController@index_through');

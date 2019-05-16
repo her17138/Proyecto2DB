@@ -167,14 +167,14 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="/configurarTienda">Configurar tienda</a></li>
-                        <li><a href="/cliente">Agregar clientes</a></li>
+                        <li><a href="/factura">Facturar</a></li>
+                        <li><a href="/verProducto">Ver productos</a></li>
                         <li><a href="/verClientes">Ver clientes</a></li>
                         <li><a href="/producto">Ingresar producto</a></li>
-                        <li><a href="/verProducto">Ver productos</a></li>
-                        <li><a href="/factura">Facturar</a></li>
+                        <li class="active"><a href="/configurarTienda">Configurar Productos</a></li>
+                        <li><a href="/cliente">Agregar clientes</a></li>
                         <li><a href="/verFactura">Ver facturas</a></li>
-                        <li><a href="/fill">Simular ventas</a></li>
+                        <li><a href="/home">Simular ventas</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li class="get_free_btn btn-xs"><a href="https://github.com/her17138/Proyecto2DB/tree/Lulu">Github</a></li>

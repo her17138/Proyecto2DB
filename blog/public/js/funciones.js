@@ -24,7 +24,6 @@ $(document).ready(function () {
         var newRow = $("<tr>");
         var cols = "";
         var marArray = JSON.parse(marcas); // convertir el json que viene a un array
-        var prodArray = JSON.parse(productos);
         
         
         cols +='</select></td>';
