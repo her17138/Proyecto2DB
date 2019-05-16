@@ -61,7 +61,7 @@
            
             <div class="row">
                 <div class="col">
-                    <input type="text" class="form-control-plaintext" style="font-size: 22px;text-align:center;" name="categoria1" value="{{ $atributo->nombre }}"/>
+                    <label type="text" class="form-control-plaintext" style="font-size: 22px;text-align:center;" name="categoria1" >{{ $atributo->nombre }} </label>
                     <br>
                 </div>
                 <div class="col">
@@ -110,7 +110,7 @@
            
             <div class="row">
                 <div class="col">
-                    <input type="text" class="form-control-plaintext" style="font-size: 22px;text-align:center;" name="atributo" value="{{ $atributo->nombre }}"/>
+                    <label type="text" class="form-control-plaintext" style="font-size: 22px;text-align:center;" name="atributo" > {{ $atributo->nombre }}</label>
                     <br>
                 </div>
                 <div class="col">
@@ -125,7 +125,7 @@
     </div>
     
     <div class="container-contact100-form-btn">
-        <button class="contact100-form-btn btn-block" href="/home">
+        <button class="contact100-form-btn btn-block" href="/verProducto">
             Agregar
         </button>
     </div>

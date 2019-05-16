@@ -122,8 +122,8 @@ class ProductoController extends Controller
 
                 $valor = new Valor;
                 $valor2 = new Valor;
-                $valor -> productoid = $producto->productoid;
-                $valor2 -> productoid = $producto->productoid;
+                $valor -> marcaid = $marca->marcaid;
+                $valor2 -> marcaid = $marca2->marcaid;
                 $valor -> atributoid = $atributo->atributoid;
                 $valor2 -> atributoid = $atributo->atributoid;
 
@@ -135,6 +135,8 @@ class ProductoController extends Controller
                 $valor2->save();
         
             }
+
+            return redirect('/clientes');
         }
         catch (\Illuminate \ Database \ QueryException  $exception){
             return back()->withError($exception->getMessage())->withInput();
