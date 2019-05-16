@@ -15,6 +15,7 @@
         
         <!-- Bootstrap -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/main.css">
         
         <!-- Rev slider css -->
         <link href="vendors/revolution/css/settings.css" rel="stylesheet">
@@ -75,8 +76,9 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             
-                                <input type="text" id="dias" placeholder='Numero de dias a simular'>
-                                <button class='innerLink' id='trigger_link'>Simular</button>
+                                <input type="text" class="form-control" id="dias" placeholder='Numero de dias a simular'>
+                                
+                                <button class='innerLink' style="height: 20px; position:relative; margin: -20px -50px; width:100px; top:30%; left:50%;" id='trigger_link'>Simular</button>
                                 {{ csrf_field() }}
 
                             </div>
