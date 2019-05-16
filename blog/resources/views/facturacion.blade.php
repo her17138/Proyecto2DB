@@ -1,8 +1,8 @@
 @extends('master')
 
 @section('body')
-<script type="text/javascript" >var marcas = '<?= $atributos ?>';</script>
-<script type="text/javascript">var productos = '<?= $productos ?>';</script>
+<script type="text/javascript" >var atributos = `<?= $atributos ?>`;</script>
+<script type="text/javascript">var productos = `<?= $productos ?>`;</script>
 
 
 
