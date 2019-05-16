@@ -3,13 +3,15 @@
 @section('body')
 <form method="post" action="{{ route('atributo.store') }}">
 @csrf
-<h1 style="color:rgb(37,40,80);font-size: 50px;"><b> Datos personalizados </b></h1>
+<h1 style="color:rgb(37,40,80);font-size: 50px;"><b> Atributos del Producto </b></h1>
     <br>
     <hr>
-    <table id="datosCustom" class=" table order-list" >
+    <span style="color:rgb(37,40,80);font-size: 25px;text-decoration: underline;">Atributos</span>
+    <table id="datosCustom" class=" table order-list">
         <thead>
             <tr>
-                <td style="text-align:center; font-size: 20px; text-decoration: underline;">Nombre de datos</td>
+                <td style="text-align:left;font-size: 20px;">Nombre de los Atributos</td>
+                
             </tr>
         </thead>
         <tbody>

@@ -60,12 +60,12 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="/configurarTienda">Configurar tienda</a></li>
-                        <li><a href="/cliente">Agregar clientes</a></li>
+                        <li><a href="/factura">Facturar</a></li>
+                        <li><a href="/verProducto">Ver productos</a></li>
                         <li><a href="/verClientes">Ver clientes</a></li>
                         <li><a href="/producto">Ingresar producto</a></li>
-                        <li><a href="/verProducto">Ver productos</a></li>
-                        <li><a href="/factura">Facturar</a></li>
+                        <li class="active"><a href="/configurarTienda">Configurar Productos</a></li>
+                        <li><a href="/cliente">Agregar clientes</a></li>
                         <li><a href="/verFactura">Ver facturas</a></li>
                         <li><a href="/home">Simular ventas</a></li>
                     </ul>
