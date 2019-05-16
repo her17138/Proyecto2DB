@@ -79,9 +79,9 @@ $factory->define(App\Categoria::class, function(Faker $faker) {
 $factory->define(App\Marca::class, function(Faker $faker) {
 
     $prodId = App\Producto::all()->pluck('productoid')->toArray();
-    $catId = App\Marca::all()->pluck('categoriaid')->toArray();
+    $categoria = App\Categoria::all()->pluck('categoriaid')->toArray();
     return [
-        'categoriaid' => $faker->randomElement($catId),
+        'categoriaid' => $faker->randomElement($categoria),
         'productoid' => $faker->randomElement($prodId),
         'nombre' => $faker->company(),
         'precio' => $faker->randomFloat(2,1,15),
