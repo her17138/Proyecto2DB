@@ -125,7 +125,7 @@
     </div>
     
     <div class="container-contact100-form-btn">
-        <button class="contact100-form-btn btn-block" href="/home">
+        <button class="contact100-form-btn btn-block" href="/clientes">
             Agregar
         </button>
     </div>
