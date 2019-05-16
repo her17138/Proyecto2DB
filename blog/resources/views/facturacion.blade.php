@@ -42,7 +42,7 @@
             <tr>
                 <td style="text-align:center;">Producto</td>
                 <td style="text-align:center;">Cantidad</td>
-                <td style="text-align:center;">Precio</td>
+                
                 
             </tr>
         </thead>
@@ -58,9 +58,7 @@
                 <td style="text-align:center" class="col-sm-3">
                     <input type="number" name="cantidad0" class="form-control" />
                 </td>
-                <td  style="text-align:center" class="col-sm-3">
-                    <input type="number"  name="precio0" class="form-control" >
-                </td>
+               
                 <td class="col-sm-2"><a class="deleteRow"></a>
                 </td>
             </tr>

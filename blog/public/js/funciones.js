@@ -28,13 +28,13 @@ $(document).ready(function () {
         
         cols +='</select></td>';
         cols += '<td style="text-align:center" class="col-sm-6"> \
-                    <select name="marca' + counter +'">';
+                    <select class="form-control" name="marca' + counter +'">';
         marArray.forEach(function(marca){
             cols +='\<option value="'+marca["marcaid"]+'">' +marca["nombre"]+ '</option>';
         });
         cols +='</select></td>';
         cols += '<td style="text-align:center" class="col-sm-3"> <input type="number" name="cantidad' + counter +'" class="form-control" /> </td>';
-        cols += '<td style="text-align:center" class="col-sm-3" ><input type="number" step="any" name="precio' + counter +'" class="form-control" /></td>';
+        
 
         cols += '<td><input type="button" class="ibtnDel btn btn-md btn-danger "  value="Borrar"></td>';
         newRow.append(cols);
