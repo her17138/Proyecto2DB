@@ -151,11 +151,16 @@ class FacturaController extends Controller
     }
 
     function migrate(Request $request){
-        exec('composer dump-autoload');
-        Artisan::call('db:seed' ,['--force' => true]);
         $fecha = $request->get('cantidadDias');
+        exec('composer dump-autoload');
+        for ($x = 0; $x <= $fecha-1; $x++) {
+            Artisan::call('db:seed' ,['--force' => true]);
+            DB::select('call offsetDays(?)', array($x+1));
+        } 
+        
+        
         //llamamos stored procedure..
-        DB::select('call offsetDays(?)', array($fecha));
+       
     }
 
 
