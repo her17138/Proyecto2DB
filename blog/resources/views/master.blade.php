@@ -181,9 +181,9 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             
-                                <input type="text" class="form-control" id="dias" placeholder='Numero de dias a simular'>
+                                <input type="text" class="form-control font-family:Nunito; font-weight: bold" id="dias" placeholder="Numero de dias a simular">
                                 
-                                <button class='innerLink' style="height: 20px; position:relative; margin: -20px -50px; width:100px; top:30%; left:50%;" id='trigger_link'>Simular</button>
+                                <button class='innerLink' style="height: 20px; position:relative; margin: -20px -50px; width:100px; top:30%; down:30%; left:50%;right:50%; font-family:Nunito; font-weight: bold" id='trigger_link'>Simular</button>
                                 {{ csrf_field() }}
 
                             </div>

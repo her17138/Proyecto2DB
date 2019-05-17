@@ -56,12 +56,12 @@ class FacturaController extends Controller
      */
     public function store(Request $request)
     {
-        try{
+        //try{
             //print_r($request -> all());
             $input = $request -> all();
             $idfac = count(Factura::all()) +1; //id de factura
 
-            $length = (int)((count($input) -3 )/3); // lineas de factura ingresada
+            $length = (int)((count($input) -3 )/2); // lineas de factura ingresada
             
             $suma =0;
 
@@ -87,7 +87,7 @@ class FacturaController extends Controller
                     return view('/error', compact('message'));
                 } else {
                     $prueba->save();
-                    $factura -> saveorFail();
+                    $factura -> save();
                 }
                 
                 $productoid = DB::table('marcas')->select('productoid')->where('marcaid', $request->input("marca".$i))->first();
@@ -99,14 +99,14 @@ class FacturaController extends Controller
                 $il -> cantidad = $request -> input("cantidad".$i);
                 $il -> preciounitario = $precio->precio;
                 $il->save();
-                                
-                return redirect('/verFactura');
+                            
             }
+            return redirect('/verFactura');
         
-            
+        /*    
         }catch (\Illuminate\Database\QueryException $exception) {
             return back()->withError($exception->getMessage())->withInput();
-        }
+        }*/
         
         
        

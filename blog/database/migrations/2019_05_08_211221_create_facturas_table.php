@@ -19,8 +19,7 @@ class CreateFacturasTable extends Migration
             //$table->primary('facturaid');
             $table->string('direccion');
             $table->decimal('total', 10, 3);
-            $table->timestamp('created_at');
-            $table->timestamp('updated_at');
+            $table->timestamps();
             $table->foreign('clienteNIT')
             ->references('clienteNIT')
             ->on('clientes');
