@@ -21,7 +21,8 @@ class CreateLineaFacturasTable extends Migration
             //$table->primary('lineaid');
             $table->integer('cantidad');
             $table->decimal('preciounitario', 10, 3);
-
+            $table->timestamp('created_at');
+            $table->timestamp('updated_at');
             $table->foreign('productoid')
             ->references('productoid')
             ->on('productos');

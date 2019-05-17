@@ -94,11 +94,15 @@ $factory->define(App\LineaFactura::class, function(Faker $faker) {
     $prodId = App\Producto::all()->pluck('productoid')->toArray();
     $marcaId = App\Marca::all()->pluck('marcaid')->toArray();
     $facturaId = App\Factura::all()->pluck('facturaid')->toArray();
+    $date = App\Factura::all()->pluck('created_at')->toArray();
+    $date2 = App\Factura::all()->pluck('updated_at')->toArray();
     return [
         'productoid' => $faker->randomElement($prodId),
         'marcaid' => $faker->randomElement($marcaId),
         'facturaid' => $faker->randomElement($facturaId),
         'cantidad' => $faker->randomNumber(2),
         'preciounitario' => $faker ->randomFloat($nbMaxDecimals = NULL, $min = 1, $max = 20),
+        'created_at' => $faker ->randomElement($date),
+        'updated_at' => $faker ->randomElement($date2),
     ];
 });
