@@ -95,9 +95,14 @@ class ProductoController extends Controller
             } elseif ($request -> input("inputState") == $cat2->Nombre){
                 $marca -> categoriaid = $cat2->categoriaid;
                 $marca->save();
-            } else {
+            } elseif ($request -> input("inputState") == "") {
+                $marca -> categoriaid = Null;
+                $marca->save();
+                
+            }else{
                 $message = "La categoria no es correcta";
-                return view('error', compact('message'));
+                $valor = $request -> input("inputState");
+                return view('error', compact('message', 'valor'));
             }
             
             
@@ -111,15 +116,18 @@ class ProductoController extends Controller
                 $marca2 -> productoid = $producto->productoid;
                 if ($request -> input("inputState2") == $cat1->Nombre){
                     $marca2 -> categoriaid = $cat1->categoriaid;
+                    $marca2->save();
                 } elseif ($request -> input("inputState2") == $cat2->Nombre){
                     $marca2 -> categoriaid = $cat2->categoriaid;
-                } elseif ($request -> input("inputState2") == Null){
-                    $marca2 -> categoriaid = $request -> input("inputState2");
+                    $marca2->save();
+                } elseif ($request -> input("inputState2") == ""){
+                    $marca2 -> categoriaid = Null;
+                    $marca2->save();
                 } else {
                     $message = "La categoria no es correcta";
                     return view('error', compact('message'));
                 }
-                $marca2->save();
+                
 
                 foreach ($atributos as $atributo){
                     $cambio = Atributo::find($atributo->atributoid);

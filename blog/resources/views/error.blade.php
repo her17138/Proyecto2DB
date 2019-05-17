@@ -1,5 +1,5 @@
 @extends('master')
 
 @section('body')
-<h1>{{$message}} </h1>
+<h1>{{$message.$valor}} </h1>
 @endsection
