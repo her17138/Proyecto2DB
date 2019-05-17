@@ -144,8 +144,16 @@ class FacturaController extends Controller
     function populateTable(Request $request){
         $facturaid = $request->get('facturaid');
         $lineaid = $request->get('lineafactura');
-
-        $data = DB::table('linea_facturas')->where('facturaid', $facturaid)->get();
+        /*$data = DB::table('linea_facturas')
+                    ->join('facturas', 'linea_facturas.facturaid', '=', 'facturas.facturaid')
+                    ->select('linea_facturas.*', 'facturas.created_at')
+                    ->where('facturaid', $facturaid)
+                    ->get();*/
+                    $data = DB::table('linea_facturas')
+                    ->leftJoin('facturas', 'linea_facturas.facturaid', '=', 'facturas.facturaid')
+                    ->where('linea_facturas.facturaid', $facturaid)
+                    ->select('linea_facturas.*', 'facturas.created_at')
+                    ->get();
         return response()->json($data);
 
     }

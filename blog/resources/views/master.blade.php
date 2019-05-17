@@ -169,12 +169,12 @@
                     <ul class="nav navbar-nav">
                         <li><a href="/home">Home</a></li>
                         <li class="active"><a href="/configurarTienda">Configurar Atributos</a></li>
-                        <li><a href="/producto">Ingresar producto</a></li>
-                        <li><a href="/cliente">Agregar clientes</a></li>
-                        <li><a href="/factura">Facturar</a></li>
-                        <li><a href="/verProducto">Ver productos</a></li>
-                        <li><a href="/verClientes">Ver clientes</a></li>
-                        <li><a href="/verFactura">Ver facturas</a></li>
+                        <li><a class="col-sm" style="text-align:left;" href="/producto">Ingresar producto</a></li>
+                        <li><a class="col-sm" style="text-align:left;"href="/cliente">Agregar clientes</a></li>
+                        <li><a class="col-sm" style="text-align:left;" href="/factura">Facturar</a></li>
+                        <li><a  class="col-sm" style="text-align:left;" href="/verProducto">Ver productos</a></li>
+                        <li><a class="col-sm" style="text-align:left;" href="/verClientes">Ver clientes</a></li>
+                        <li><a class="col-sm" style="text-align:left;" href="/verFactura">Ver facturas</a></li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Simular ventas

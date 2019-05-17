@@ -165,7 +165,7 @@ class ProductoController extends Controller
             }
 
 
-            return redirect('/clientes');
+            return redirect('/producto');
         }
         catch (\Illuminate \ Database \ QueryException  $exception){
             return back()->withError($exception->getMessage())->withInput();

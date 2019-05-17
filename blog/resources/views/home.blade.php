@@ -60,15 +60,15 @@
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
-                        <li><a href="/home">Home</a></li>
+                    <ul class="nav navbar-nav ml-auto">
+                        <li><a  class="col-sm" style="align:left;"  href="/home">Home</a></li>
                         <li class="active"><a href="/configurarTienda">Configurar Atributos</a></li>
-                        <li><a href="/producto">Ingresar producto</a></li>
-                        <li><a href="/cliente">Agregar clientes</a></li>
-                        <li><a href="/factura">Facturar</a></li>
-                        <li><a href="/verProducto">Ver productos</a></li>
-                        <li><a href="/verClientes">Ver clientes</a></li>
-                        <li><a href="/verFactura">Ver facturas</a></li>
+                        <li><a class="col-sm" style="align:left;" href="/producto">Ingresar producto</a></li>
+                        <li><a class="col-sm" style="align:left;" href="/cliente">Agregar clientes</a></li>
+                        <li><a class="col-sm" style="align:left;" href="/factura">Facturar</a></li>
+                        <li><a class="col-sm" style="align:left;" href="/verProducto">Ver productos</a></li>
+                        <li><a class="col-sm" style="align:left;" href="/verClientes">Ver clientes</a></li>
+                        <li><a class="col-sm" style="align:left;" href="/verFactura">Ver facturas</a></li>
                         <!--<li><a href="/fill">Simular ventas</a></li> -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

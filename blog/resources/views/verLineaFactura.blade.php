@@ -23,6 +23,7 @@
             <th style="text-align:center;">ID de factura</th>
             <th style="text-align:center;">Cantidad</th>
             <th style="text-align:center;">Precio Unitario</th>
+            <th style="text-align:center;">Fecha de facturación</th>
         </tr>
         <tbody>
    <br>
@@ -94,7 +95,7 @@
                                 table.deleteRow(i);
                             }
                             $.each(response, function (i, item) {
-                            trHTML += '<tr><td>' + counter + '</td><td>' + item.productoid + '</td><td>' + item.marcaid + '</td><td>' + item.facturaid + '</td><td>' + item.cantidad + '</td><td>' + item.preciounitario + '</td></tr>';
+                            trHTML += '<tr><td>' + counter + '</td><td>' + item.productoid + '</td><td>' + item.marcaid + '</td><td>' + item.facturaid + '</td><td>' + item.cantidad + '</td><td>' + item.preciounitario +'</td><td>'+ item.created_at +'</td></tr>';
                             //alert(item.lineaid);
                             counter ++;
                             });
