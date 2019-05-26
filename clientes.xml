@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema dbmsId="postgres_id">
+    <column comment="" default="" key="true" label="clienteNIT"
+        length="-1" nullable="false" originalDbColumnName="clienteNIT"
+        originalLength="-1" pattern="" precision="-1"
+        talendType="id_String" type="VARCHAR"/>
+    <column comment="" default="" key="false" label="Nombre" length="-1"
+        nullable="false" originalDbColumnName="Nombre"
+        originalLength="-1" pattern="" precision="-1"
+        talendType="id_String" type="VARCHAR"/>
+    <column comment="" default="" key="false" label="Apellido"
+        length="-1" nullable="false" originalDbColumnName="Apellido"
+        originalLength="-1" pattern="" precision="-1"
+        talendType="id_String" type="VARCHAR"/>
+    <column comment="" default="" key="false" label="Telefono"
+        length="-1" nullable="false" originalDbColumnName="Telefono"
+        originalLength="-1" pattern="" precision="-1"
+        talendType="id_String" type="VARCHAR"/>
+    <column comment="" default="" key="false" label="Direccion"
+        length="-1" nullable="false" originalDbColumnName="Direccion"
+        originalLength="-1" pattern="" precision="-1"
+        talendType="id_String" type="VARCHAR"/>
+</schema>

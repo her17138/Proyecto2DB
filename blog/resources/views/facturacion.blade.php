@@ -56,7 +56,7 @@
                     </select>
                 </td>
                 <td style="text-align:center" class="col-sm-3">
-                    <input type="number" name="cantidad0" class="form-control" />
+                    <input type="number" name="cantidad0" class="form-control" value ="1"/>
                 </td>
                
                 <td class="col-sm-2"><a class="deleteRow"></a>
@@ -67,6 +67,12 @@
             <tr>
                 <td colspan="5" style="text-align: center;">
                     <input type="button" class="btn btn-info btn-lg btn-block" style="border-radius:100px" id="addrowF" value="+" />
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="5" style="text-align: center;">
+                    <h3>Total: </h3>
                 </td>
             </tr>
             <tr>
