@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema dbmsId="postgres_id">
+    <column comment="" default="" key="true" label="lineaid" length="-1"
+        nullable="false" originalDbColumnName="lineaid"
+        originalLength="-1" pattern="" precision="-1"
+        talendType="id_Integer" type="INT4"/>
+    <column comment="" default="" key="false" label="productoid"
+        length="-1" nullable="false" originalDbColumnName="productoid"
+        originalLength="-1" pattern="" precision="-1"
+        talendType="id_Integer" type="INT4"/>
+    <column comment="" default="" key="false" label="marcaid"
+        length="-1" nullable="false" originalDbColumnName="marcaid"
+        originalLength="-1" pattern="" precision="-1"
+        talendType="id_Integer" type="INT4"/>
+    <column comment="" default="" key="false" label="facturaid"
+        length="-1" nullable="false" originalDbColumnName="facturaid"
+        originalLength="-1" pattern="" precision="-1"
+        talendType="id_Integer" type="INT4"/>
+    <column comment="" default="" key="false" label="cantidad"
+        length="-1" nullable="false" originalDbColumnName="cantidad"
+        originalLength="-1" pattern="" precision="-1"
+        talendType="id_Integer" type="INT4"/>
+    <column comment="" default="" key="false" label="preciounitario"
+        length="-1" nullable="false"
+        originalDbColumnName="preciounitario" originalLength="-1"
+        pattern="" precision="-1" talendType="id_Float" type="NUMERIC"/>
+    <column comment="" default="" key="false" label="created_at"
+        length="-1" nullable="false" originalDbColumnName="created_at"
+        originalLength="-1" pattern="&quot;yyyy-MM-dd&quot;"
+        precision="-1" talendType="id_Date" type="TIMESTAMP"/>
+    <column comment="" default="" key="false" label="updated_at"
+        length="-1" nullable="false" originalDbColumnName="updated_at"
+        originalLength="-1" pattern="&quot;yyyy-MM-dd&quot;"
+        precision="-1" talendType="id_Date" type="TIMESTAMP"/>
+</schema>
