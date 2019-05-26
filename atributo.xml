@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema dbmsId="postgres_id">
+    <column comment="" default="" key="false" label="atributoid"
+        length="-1" nullable="false" originalDbColumnName="atributoid"
+        originalLength="-1" pattern="" precision="-1"
+        talendType="id_Integer" type="INT4"/>
+    <column comment="" default="" key="false" label="productoid"
+        length="-1" nullable="true" originalDbColumnName="productoid"
+        originalLength="-1" pattern="" precision="-1"
+        talendType="id_Integer" type="INT4"/>
+    <column comment="" default="" key="false" label="nombre" length="-1"
+        nullable="false" originalDbColumnName="nombre"
+        originalLength="-1" pattern="" precision="-1"
+        talendType="id_String" type="VARCHAR"/>
+</schema>

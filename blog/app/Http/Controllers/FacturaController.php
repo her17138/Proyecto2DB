@@ -56,7 +56,7 @@ class FacturaController extends Controller
      */
     public function store(Request $request)
     {
-        //try{
+        try{
             //print_r($request -> all());
             $input = $request -> all();
             $idfac = count(Factura::all()) +1; //id de factura
@@ -64,11 +64,16 @@ class FacturaController extends Controller
             $length = (int)((count($input) -3 )/2); // lineas de factura ingresada
             
             $suma =0;
-
             //loop para obtener el precio total 
             for($i=0; $i < $length; $i++) {
+                $cantidad = $request -> input("cantidad".$i);
                 $precio = DB::table('marcas')->select('precio')->where('marcaid', $request->input("marca".$i))->first();
-                $suma += $precio->precio * $request -> input("cantidad".$i);
+                if ($cantidad > 0){
+                    $suma += $precio->precio * $request -> input("cantidad".$i);
+                }
+                else{
+                    $suma += $precio->precio;
+                }
             }
             $factura = new Factura;
             $factura -> clienteNIT = $request -> input("clienteNIT");
@@ -96,23 +101,20 @@ class FacturaController extends Controller
                 
                 $il -> marcaid = $request -> input("marca".$i);
                 $il -> facturaid = $factura->facturaid;
-                $il -> cantidad = $request -> input("cantidad".$i);
+                if ($request -> input("cantidad".$i) >0){
+                    $il -> cantidad = $request -> input("cantidad".$i);
+                }
+                else{
+                    $il -> cantidad = 1;
+                }
                 $il -> preciounitario = $precio->precio;
                 $il->save();
                             
             }
-            return redirect('/verFactura');
-        
-        /*    
+            return redirect('/verFactura'); 
         }catch (\Illuminate\Database\QueryException $exception) {
             return back()->withError($exception->getMessage())->withInput();
-        }*/
-        
-        
-       
-        
-
-
+        }
     }
 
     /**

@@ -25,6 +25,10 @@ class CreateMarcasTable extends Migration
             $table->foreign('productoid')
             ->references('productoid')
             ->on('productos');
+
+            $table->foreign('categoriaid')
+            ->references('categoriaid')
+            ->on('categorias');
         });
     }
 

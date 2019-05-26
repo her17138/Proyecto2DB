@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema dbmsId="postgres_id">
+    <column comment="" default="" key="true" label="facturaid"
+        length="-1" nullable="false" originalDbColumnName="facturaid"
+        originalLength="-1" pattern="" precision="-1"
+        talendType="id_Integer" type="INT4"/>
+    <column comment="" default="" key="false" label="clienteNIT"
+        length="-1" nullable="false" originalDbColumnName="clienteNIT"
+        originalLength="-1" pattern="" precision="-1"
+        talendType="id_String" type="VARCHAR"/>
+    <column comment="" default="" key="false" label="direccion"
+        length="-1" nullable="false" originalDbColumnName="direccion"
+        originalLength="-1" pattern="" precision="-1"
+        talendType="id_String" type="VARCHAR"/>
+    <column comment="" default="" key="false" label="total" length="-1"
+        nullable="false" originalDbColumnName="total"
+        originalLength="-1" pattern="" precision="-1"
+        talendType="id_Float" type="NUMERIC"/>
+    <column comment="" default="" key="false" label="created_at"
+        length="-1" nullable="false" originalDbColumnName="created_at"
+        originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;"
+        precision="-1" talendType="id_Date" type="TIMESTAMP"/>
+    <column comment="" default="" key="false" label="updated_at"
+        length="-1" nullable="false" originalDbColumnName="updated_at"
+        originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;"
+        precision="-1" talendType="id_Date" type="TIMESTAMP"/>
+</schema>
