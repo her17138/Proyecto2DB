@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema dbmsId="postgres_id">
+    <column comment="" default="" key="true" label="valorid" length="-1"
+        nullable="false" originalDbColumnName="valorid"
+        originalLength="-1" pattern="" precision="-1"
+        talendType="id_Integer" type="INT4"/>
+    <column comment="" default="" key="false" label="marcaid"
+        length="-1" nullable="false" originalDbColumnName="marcaid"
+        originalLength="-1" pattern="" precision="-1"
+        talendType="id_Integer" type="INT4"/>
+    <column comment="" default="" key="false" label="atributoid"
+        length="-1" nullable="false" originalDbColumnName="atributoid"
+        originalLength="-1" pattern="" precision="-1"
+        talendType="id_Integer" type="INT4"/>
+    <column comment="" default="" key="false" label="valor" length="-1"
+        nullable="false" originalDbColumnName="valor"
+        originalLength="-1" pattern="" precision="-1"
+        talendType="id_String" type="VARCHAR"/>
+</schema>
