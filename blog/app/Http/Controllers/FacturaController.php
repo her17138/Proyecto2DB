@@ -163,8 +163,15 @@ class FacturaController extends Controller
     function migrate(Request $request){
         $fecha = $request->get('cantidadDias');
         exec('composer dump-autoload');
+
+        //Seed general..
+        Artisan::call('db:seed' ,['--force' => true]);
         for ($x = 0; $x <= $fecha-1; $x++) {
-            Artisan::call('db:seed' ,['--force' => true]);
+            //seed especifico.
+            
+            Artisan::call('db:seed', ['--class' => 'FacturaTableSeeder']);
+
+            Artisan::call('db:seed', ['--class' => 'FacturaLineTableSeeder']);
             DB::select('call offsetDays(?)', array($x+1));
         } 
         

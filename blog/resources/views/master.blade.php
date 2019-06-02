@@ -137,7 +137,7 @@
            
         </style>
         <!--                Javascript                  -->
-        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+        
         <script type="text/javascript" src="{{ URL::asset('js/funciones.js') }}"></script>
     </head>
     <div id="preloader">
@@ -175,24 +175,43 @@
                         <li><a  class="col-sm" style="text-align:left;" href="/verProducto">Ver productos</a></li>
                         <li><a class="col-sm" style="text-align:left;" href="/verClientes">Ver clientes</a></li>
                         <li><a class="col-sm" style="text-align:left;" href="/verFactura">Ver facturas</a></li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Simular ventas
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            
-                                <input type="text" class="form-control font-family:Nunito; font-weight: bold" id="dias" placeholder="Numero de dias a simular">
+                                    
                                 
-                                <button class='innerLink' style="height: 20px; position:relative; margin: -20px -50px; width:100px; top:30%; down:30%; left:50%;right:50%; font-family:Nunito; font-weight: bold" id='trigger_link'>Simular</button>
-                                {{ csrf_field() }}
+                    {{ csrf_field() }}
 
-                            </div>
-                        </li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li class="get_free_btn btn-xs"><a href="https://github.com/her17138/Proyecto2DB/tree/Lulu">Github</a></li>
                     </ul>
+
+
+                    <ul class = "navbar-nav flex-row mb-2"">
+
+                        <li class = "nav-item">
+
+                            <input type="date" id='fecha_inicial'>
+                            <input type="date" id='fecha_final'>
+
+
+                        </li>
+                        <li class="nav-item">
+                                <button class='innerLink' style="height: 20px; position:relative; margin: -2px 20px; width:100px; top:30%; down:30%; left:50%;right:50%; font-family:Nunito; font-weight: bold" id='trigger_link'>Simular</button>
+                        </li>
+                        
+                       
+                    </ul>
+                    
+
+
+
+
                 </div><!-- /.navbar-collapse -->
+
+
+                
+
+
+
             </nav>
         </header>
         <!--================End Header Area =================-->
@@ -205,33 +224,7 @@
             
         </div>
     </body>
-    <script type="text/javascript">
-        $(document).ready(function(){
-            $("#trigger_link").click(function(){
-                //alert($('#dias').val());
-                //TODO: AXIOS REQUEST..
-
-                var quantity = $('#dias').val();
-                var _token = $('input[name="_token"]').val();
-                //alert(quantity);
-                quantity=parseInt(quantity);
-                //alert(quantity);
-
-                //ajax...
-                $.ajax({
-                   url: "{{ route('FacturaController.migrate') }}",
-                   method: "POST",
-                   data:{cantidadDias:quantity, _token:_token}
-               }).fail( function(xhr, textStatus, errorThrown) {
-                    alert(xhr.responseText);
-                }).success(function(){
-                    alert('Simulacion finalizada exitosamente');
-                }); 
-
-            });
-        })
-    </script>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery-2.2.4.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
@@ -257,4 +250,50 @@
     <script src="vendors/nice-selector/jquery.nice-select.min.js"></script>
     
     <script src="js/theme.js"></script>
+
+
+    <script type="text/javascript">
+        $(document).ready(function($){
+            
+             
+            
+            
+            $("#trigger_link").click(function(){
+
+                var x_inicial=$('#fecha_inicial').val();
+                var x_final=$('#fecha_final').val();
+
+                var x_fecha_i = new Date(x_inicial);
+                var x_fecha_f = new Date(x_final);
+
+                var _token = $('input[name="_token"]').val();
+
+                const diffTime = Math.abs(x_fecha_f.getTime() - x_fecha_i.getTime());
+                const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+                alert('Simulando la cantidad de dias: ' + diffDays.toString());
+                
+        
+                //TODO: AXIOS REQUEST..
+
+            
+                //ajax...
+                
+                $.ajax({
+                   url: "{{ route('FacturaController.migrate') }}",
+                   method: "POST",
+                   data:{cantidadDias:diffDays, _token:_token}
+               }).fail( function(xhr, textStatus, errorThrown) {
+                    alert(xhr.responseText);
+                }).success(function(){
+                    alert('Simulacion finalizada exitosamente');
+                }); 
+                
+                
+
+            });
+        })
+
+
+    </script>
+
 </html>

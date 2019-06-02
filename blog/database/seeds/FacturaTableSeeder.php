@@ -11,7 +11,7 @@ class FacturaTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Factura::class, 100)->create()->each(function($fact){
+        factory(App\Factura::class, 2000)->create()->each(function($fact){
             $fact->save();
             });
     }

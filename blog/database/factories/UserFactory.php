@@ -3,7 +3,7 @@
 /**
  * increase runtime limit de funcion a 5 minutos para simulacion de datos masiva.
  */
-ini_set('max_execution_time', 300);
+ini_set('max_execution_time', 10000);
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 use App\User;
