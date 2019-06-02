@@ -175,7 +175,8 @@
                         <li><a  class="col-sm" style="text-align:left;" href="/verProducto">Ver productos</a></li>
                         <li><a class="col-sm" style="text-align:left;" href="/verClientes">Ver clientes</a></li>
                         <li><a class="col-sm" style="text-align:left;" href="/verFactura">Ver facturas</a></li>
-                                    
+                        <li><a class="col-sm" style="align:left;" href="/simulacion">Simular ventas</a></li>
+                        
                                 
                     {{ csrf_field() }}
 
@@ -183,27 +184,6 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li class="get_free_btn btn-xs"><a href="https://github.com/her17138/Proyecto2DB/tree/Lulu">Github</a></li>
                     </ul>
-
-
-                    <ul class = "navbar-nav flex-row mb-2"">
-
-                        <li class = "nav-item">
-
-                            
-
-
-                        </li>
-                        <li class="nav-item">
-                                
-                        </li>
-                        
-                       
-                    </ul>
-                    
-
-
-
-
                 </div><!-- /.navbar-collapse -->
 
             </nav>
@@ -212,17 +192,7 @@
         <!--================End Header Area =================-->
     <body style="padding-top: 60px;">
         
-            
-                <div class="wrap-contact100" style="margin-left: 20%; margin-top: 5%;">
-                    <h1 style="margin-left: 28%;">Simulación de datos</h1>
-                    <input type="date" id='fecha_inicial' style="margin-left: 27%; margin-right: 2%;">
-                    <input type="date" id='fecha_final' style="margin: 5% 0%;">
-                    <br>
-                    <button class='innerLink' style="height: 40px; background-color: #121921; color:#F0CD2F; padding-bottom: 2%; padding-right: 18.3%; padding-left: 1.5%; padding-top: 1.3%; padding-bottom:2.4%; margin-left: 43.5%; width:100px; top:30%; down:30%; left:50%;right:50%; font-family:Nunito; font-weight: bold; font-size: 30px;" id='trigger_link'>Simular</button>
-                    <br>                
-                </div>
                 
-            
         <div class="container-contact100 ">
                 <div class="wrap-contact100">
                     @yield('body')
