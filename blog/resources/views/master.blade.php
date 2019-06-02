@@ -189,13 +189,12 @@
 
                         <li class = "nav-item">
 
-                            <input type="date" id='fecha_inicial'>
-                            <input type="date" id='fecha_final'>
+                            
 
 
                         </li>
                         <li class="nav-item">
-                                <button class='innerLink' style="height: 20px; position:relative; margin: -2px 20px; width:100px; top:30%; down:30%; left:50%;right:50%; font-family:Nunito; font-weight: bold" id='trigger_link'>Simular</button>
+                                
                         </li>
                         
                        
@@ -207,17 +206,24 @@
 
                 </div><!-- /.navbar-collapse -->
 
-
-                
-
-
-
             </nav>
+            
         </header>
         <!--================End Header Area =================-->
     <body style="padding-top: 60px;">
-        <div class="container-contact100 ">
+        
             
+                <div class="wrap-contact100" style="margin-left: 20%; margin-top: 5%;">
+                    <h1 style="margin-left: 28%;">Simulación de datos</h1>
+                    <input type="date" id='fecha_inicial' style="margin-left: 27%; margin-right: 2%;">
+                    <input type="date" id='fecha_final' style="margin: 5% 0%;">
+                    <br>
+                    <button class='innerLink' style="height: 40px; background-color: #121921; color:#F0CD2F; padding-bottom: 2%; padding-right: 18.3%; padding-left: 1.5%; padding-top: 1.3%; padding-bottom:2.4%; margin-left: 43.5%; width:100px; top:30%; down:30%; left:50%;right:50%; font-family:Nunito; font-weight: bold; font-size: 30px;" id='trigger_link'>Simular</button>
+                    <br>                
+                </div>
+                
+            
+        <div class="container-contact100 ">
                 <div class="wrap-contact100">
                     @yield('body')
                 </div>
