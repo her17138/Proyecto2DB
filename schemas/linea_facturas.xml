@@ -4,6 +4,10 @@
         nullable="false" originalDbColumnName="lineaid"
         originalLength="-1" pattern="" precision="-1"
         talendType="id_Integer" type="INT4"/>
+    <column comment="" default="" key="false" label="tiendaid"
+        length="-1" nullable="false" originalDbColumnName="tiendaid"
+        originalLength="-1" pattern="" precision="-1"
+        talendType="id_Integer" type="INT4"/>
     <column comment="" default="" key="false" label="productoid"
         length="-1" nullable="false" originalDbColumnName="productoid"
         originalLength="-1" pattern="" precision="-1"

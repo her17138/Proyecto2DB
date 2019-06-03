@@ -8,4 +8,8 @@
         nullable="false" originalDbColumnName="Nombre"
         originalLength="-1" pattern="" precision="-1"
         talendType="id_String" type="VARCHAR"/>
+    <column comment="" default="" key="false" label="tiendaid"
+        length="-1" nullable="false" originalDbColumnName="tiendaid"
+        originalLength="-1" pattern="" precision="-1"
+        talendType="id_Integer" type="INT4"/>
 </schema>
