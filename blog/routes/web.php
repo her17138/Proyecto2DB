@@ -27,6 +27,10 @@ Route::get('/atributos', function(){
 Route::get('/configurarTienda', function(){
     return view('configurarTienda');
 }) -> name ('configurarTienda');
+
+Route::get('/simulacion', function(){
+    return view('simulacion');
+}) -> name ('simulacion');
 /*
 Route::get('/facturacion', function(){
     return view('facturacion');

@@ -69,20 +69,8 @@
                         <li><a class="col-sm" style="align:left;" href="/verProducto">Ver productos</a></li>
                         <li><a class="col-sm" style="align:left;" href="/verClientes">Ver clientes</a></li>
                         <li><a class="col-sm" style="align:left;" href="/verFactura">Ver facturas</a></li>
-                        <!--<li><a href="/fill">Simular ventas</a></li> -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Simular ventas
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            
-                                <input type="text" class="form-control" id="dias" placeholder="Numero de dias a simular">
-                                
-                                <button class='innerLink' style="height: 20px; position:relative; margin: -20px -50px; width:100px; top:30%; down:30%; left:50%;right:50%; font-family:Nunito" id='trigger_link'>Simular</button>
-                                {{ csrf_field() }}
-
-                            </div>
-                        </li>
+                        <li><a class="col-sm" style="align:left;" href="/simulacion">Simular ventas</a></li>
+                        {{ csrf_field() }}
                      
                     </ul>
                     <ul class="nav navbar-nav navbar-right">

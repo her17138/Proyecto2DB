@@ -175,7 +175,8 @@
                         <li><a  class="col-sm" style="text-align:left;" href="/verProducto">Ver productos</a></li>
                         <li><a class="col-sm" style="text-align:left;" href="/verClientes">Ver clientes</a></li>
                         <li><a class="col-sm" style="text-align:left;" href="/verFactura">Ver facturas</a></li>
-                                    
+                        <li><a class="col-sm" style="align:left;" href="/simulacion">Simular ventas</a></li>
+                        
                                 
                     {{ csrf_field() }}
 
@@ -183,41 +184,16 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li class="get_free_btn btn-xs"><a href="https://github.com/her17138/Proyecto2DB/tree/Lulu">Github</a></li>
                     </ul>
-
-
-                    <ul class = "navbar-nav flex-row mb-2"">
-
-                        <li class = "nav-item">
-
-                            <input type="date" id='fecha_inicial'>
-                            <input type="date" id='fecha_final'>
-
-
-                        </li>
-                        <li class="nav-item">
-                                <button class='innerLink' style="height: 20px; position:relative; margin: -2px 20px; width:100px; top:30%; down:30%; left:50%;right:50%; font-family:Nunito; font-weight: bold" id='trigger_link'>Simular</button>
-                        </li>
-                        
-                       
-                    </ul>
-                    
-
-
-
-
                 </div><!-- /.navbar-collapse -->
 
-
-                
-
-
-
             </nav>
+            
         </header>
         <!--================End Header Area =================-->
     <body style="padding-top: 60px;">
+        
+                
         <div class="container-contact100 ">
-            
                 <div class="wrap-contact100">
                     @yield('body')
                 </div>
