@@ -42,21 +42,23 @@
             <tr>
                 <td style="text-align:center;">Producto</td>
                 <td style="text-align:center;">Cantidad</td>
-                
-                
+                <td style="text-align:center;">Precio Unitario</td>
             </tr>
         </thead>
         <tbody>
-            <tr>
+            <tr id="0">
                 <td style="text-align:center" class="col-sm-6">                    
-                    <select name="marca0" class="form-control dynamic" data-dependent="precio0">
+                    <select name="marca0" id="marca0" class="form-control dynamic" data-dependent="precio0">
                     @foreach ($atributos as $atributo)
-                        <option value="{{ $atributo -> marcaid }}" > {{ $atributo -> nombre}} </option>
+                        <option id="marcas0" value="{{ $atributo -> marcaid }}" > {{ $atributo -> nombre}} </option>
                     @endforeach
                     </select>
                 </td>
                 <td style="text-align:center" class="col-sm-3">
-                    <input type="number" name="cantidad0" class="form-control" value ="1"/>
+                    <input type="number" name="cantidad0" id="cantidad0" class="form-control" value ="1"/>
+                </td>
+                <td style="text-align:center" class="col-sm-3" id="precioU0">
+                {{ $atributos[0] -> precio }}
                 </td>
                
                 <td class="col-sm-2"><a class="deleteRow"></a>
@@ -72,7 +74,7 @@
 
             <tr>
                 <td colspan="5" style="text-align: center;">
-                    <h3>Total: </h3>
+                    <h3 id="suma"></h3>
                 </td>
             </tr>
             <tr>
