@@ -79,7 +79,7 @@ $(document).ready(function () {
             dropdown = document.getElementById("marca"+String(id));
             precio = parseFloat(String(marArray[dropdown.selectedIndex]["precio"]));
             document.getElementById("precioU"+String(id)).innerHTML = precio;
-            subtotales[id] = cantidad *precio;
+            subtotales[id] = cantidad*precio;
             total =0;
             for (var i =0; i<subtotales.length; i++){
                 total += parseFloat(String(subtotales[i]));
@@ -92,11 +92,11 @@ $(document).ready(function () {
     $("table.order-list").on("click", ".ibtnDel", function (event) {
         $(this).closest("tr").remove();     
         var ind = ($(this).closest("tr").remove()[0]["id"]);
-        subtotales[ind] = 0;
+        subtotales.splice(ind, 1);
         total =0;
-            for (var i =0; i<subtotales.length; i++){
-                total += parseFloat(String(subtotales[i]));
-            }
+        for (var i =0; i<subtotales.length; i++){
+            total += parseFloat(String(subtotales[i]));
+        }
         document.getElementById("suma").innerHTML = "Total: " + total;
         counter -= 1
     });
