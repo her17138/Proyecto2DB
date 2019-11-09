@@ -1,10 +1,10 @@
-# Proyecto2DB
+# Proyecto Data Warehousing
 
-Curso Bases de datos.<br />
+Proyecto 2: Curso Bases de datos.<br />
 9/05/2019<br />
 Proyecto 2: Sistema de ventas con DB centralizada<br />
 
-## Description 
+## Descripción
 
 
 Este proyecto consiste en la implementación de conceptos de OLAP y Data Warehousing para una base de datos relacional en PostgreSQL, simulando un entorno distribuido de puntos de venta. Se pretende simular el comportamiento de un conjunto de tiendas en donde cada una maneja una instancia independiende de un sistema de ventas. La premisa básica de la simulación 
